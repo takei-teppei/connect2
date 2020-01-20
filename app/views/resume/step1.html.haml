@@ -1,0 +1,25 @@
+.header
+  = render "header"
+
+.content
+  = render "content_top"
+  
+  .content_main
+    .content_main__head
+      .content_main__head--name
+        プロフィールを入力
+      .content_main__head--description
+        氏名・年号・性別の入力を行います。
+        
+    .content_main__form
+      = form_for @resume, url: {controller: 'resume', action: 'validation' }, html: {class: 'content_main__form--box'} do |f|
+        氏名
+        = f.text_field :fullname, placeholder: '例) 〇〇 〇〇と半角を開けて入力', class: 'content_main__form--fullname'
+        フリガナ
+        = f.text_field :name_kana, placeholder: 'カタカナで入力', class: 'content_main__form--name_kana'
+        生年月日
+        = f.text_field :birthday, placeholder: '○年○月○日と入力', class: 'content_main__form--birthday'
+        性別
+        = f.text_field :gender, placeholder: '男or女で入力', class: 'content_main__form--gender'
+        .content_main__fotter
+          = f.submit '次へ', class: 'content_main__fotter--right'

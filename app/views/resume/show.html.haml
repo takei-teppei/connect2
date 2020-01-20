@@ -1,0 +1,240 @@
+.header
+  = render "header"
+
+.content_header
+  .content_header__right
+    = @resume.submit_date
+    現在
+
+.resume
+  .content_left
+    .content_upper
+      .content_upper__profile
+        .content_upper__profile__top
+          .content_upper__profile__top--kana
+            フリガナ
+          .content_upper__profile__top--name_kana
+            = @resume.name_kana
+        .content_upper__profile__middle
+          .content_upper__profile__middle--name
+            氏名
+          .content_upper__profile__middle--fullname
+            = @resume.fullname
+        .content_upper__profile__bottom
+          .content_upper__profile__bottom--birth
+            生年月日
+          .content_upper__profile__bottom--birthday
+            = @resume.birthday
+        .content_upper__profile--gender
+          = @resume.gender
+        .content_upper__profile--image
+          @resume.image
+    
+    .content_middle
+      .content_middle__top
+        .content_middle__top--a_kana
+          フリガナ
+        .content_middle__top--address_kana
+          = @resume.address_kana
+      .content_middle__up
+        .content_middle__up--sa
+          住所
+        .content_middle__up--post_code
+          (〒 
+          = @resume.post_code
+          )
+      .content_middle__perfectures
+        = @resume.perfectures
+      .content_middle__build
+        = @resume.build
+      .content_middle__number
+        .content_middle__number--tel
+          .content_middle__number--tel--left
+            電話
+          .content_middle__number--tel--right
+            = @resume.tel
+        .content_middle__number--cellphone
+          .content_middle__number--cellphone--left
+            携帯電話
+          .content_middle__number--cellphone--right
+            = @resume.cellphone
+      .content_middle__e_mail
+        .content_middle__e_mail--left
+          E-mail
+        .content_middle__e_mail--right
+          = @resume.e_mail
+    
+    .content_bottom
+      .content_bottom__top
+        .content_bottom__top--e_y0
+          年
+        .content_bottom__top--e_m0
+          月
+        .content_bottom__top--e_education0
+          学歴・職歴
+      .content_bottom__two
+        .content_bottom__two--e_y0
+        .content_bottom__two--e_m0
+        .content_bottom__two--e_education0
+          学歴
+      .content_bottom__three
+        .content_bottom__three--e_y
+          = @resume.e_y
+        .content_bottom__three--e_m
+          = @resume.e_m
+        .content_bottom__three--e_education
+          = @resume.education2_j
+      .content_bottom__four
+        .content_bottom__four--e_y2
+          = @resume.e_y2
+        .content_bottom__four--e_m2
+          = @resume.e_m2
+        .content_bottom__four--e_education2
+          = @resume.education2_j
+      .content_bottom__five
+        .content_bottom__five--e_y3
+          = @resume.e_y3
+        .content_bottom__five--e_m3
+          = @resume.e_m3
+        .content_bottom__five--e_education3
+          = @resume.education3_h
+      .content_bottom__six
+        .content_bottom__six--e_y4
+          = @resume.e_y4
+        .content_bottom__six--e_m4
+          = @resume.e_m4
+        .content_bottom__six--e_education4
+          = @resume.education4_h
+      .content_bottom__seven
+        .content_bottom__seven--e_y5
+          = @resume.e_y5
+        .content_bottom__seven--e_m5
+          = @resume.e_m5
+        .content_bottom__seven--e_education5
+          = @resume.education5_c
+      .content_bottom__eight
+        .content_bottom__eight--e_y6
+          = @resume.e_y6
+        .content_bottom__eight--e_m6
+          = @resume.e_m6
+        .content_bottom__eight--e_education6
+          = @resume.education6_c
+      .content_bottom__nine
+        .content_bottom__nine--e_y7
+        .content_bottom__nine--e_m7
+        .content_bottom__nine--e_education7
+          現在に至る
+            
+  .content_right
+    .content_right__wh
+      .content_right__wh__top
+        .content_right__wh__top--a_y
+          年
+        .content_right__wh__top--a_m
+          月
+        .content_right__wh__top--award
+          学歴・職歴
+      .content_right__wh__one
+        .content_right__wh__one--a_y
+          = @resume.a_y
+        .content_right__wh__one--a_m
+          = @resume.a_m
+        .content_right__wh__one--award
+          = @resume.award
+      .content_right__wh__two
+        .content_right__wh__two--a_y2
+          = @resume.a_y2
+        .content_right__wh__two--a_m2
+          = @resume.a_m2
+        .content_right__wh__two--award2
+          = @resume.award2
+      .content_right__wh__three
+        .content_right__wh__three--a_y3
+          = @resume.a_y3
+        .content_right__wh__three--a_m3
+          = @resume.a_m3
+        .content_right__wh__three--award3
+          = @resume.award3
+      .content_right__wh__four
+        .content_right__wh__four--a_y4
+          = @resume.a_y4
+        .content_right__wh__four--a_m4
+          = @resume.a_m4
+        .content_right__wh__four--award4
+          = @resume.award4
+      .content_right__wh__five
+        .content_right__wh__five--a_y5
+          = @resume.a_y5
+        .content_right__wh__five--a_m5
+          = @resume.a_m5
+        .content_right__wh__five--award5
+          = @resume.award5
+      .content_right__wh__six
+        .content_right__wh__six--a_y6
+          = @resume.a_y6
+        .content_right__wh__six--a_m6
+          = @resume.a_m6
+        .content_right__wh__six--award6
+          = @resume.award6
+      .content_right__wh__bottom
+        .content_right__wh__bottom--a_y
+        .content_right__wh__bottom--a_m
+        .content_right__wh__bottom--award
+          現在に至る
+    
+    .content_right__license
+      .content_right__license__top
+        .content_right__license__top--l_y
+          年
+        .content_right__license__top--l_m
+          月
+        .content_right__license__top--l_license
+          免許・資格
+      .content_right__license__1
+        .content_right__license__1--l_y
+          = @resume.l_y
+        .content_right__license__1--l_m
+          = @resume.l_m
+        .content_right__license__1--l_license
+          = @resume.license
+      .content_right__license__2
+        .content_right__license__2--l_y2
+          = @resume.l_y2
+        .content_right__license__2--l_m2
+          = @resume.l_m2
+        .content_right__license__2--l_license2
+          = @resume.license2
+      .content_right__license__3
+        .content_right__license__3--l_y3
+          = @resume.l_y3
+        .content_right__license__3--l_m3
+          = @resume.l_m3
+        .content_right__license__3--l_license3
+          = @resume.license3
+      .content_right__license__4
+        .content_right__license__4--l_y4
+          = @resume.l_y4
+        .content_right__license__4--l_m4
+          = @resume.l_m4
+        .content_right__license__4--l_license4
+          = @resume.license4
+      .content_right__license__5
+        .content_right__license__5--l_y5
+          = @resume.l_y5
+        .content_right__license__5--l_m5
+          = @resume.l_m5
+        .content_right__license__5--l_license5
+          = @resume.license5
+
+    .content_right__motivation
+      .content_right__motivation--up
+        志望動機
+      .content_right__motivation--down
+        = @resume.motivation
+
+    .content_right__free_message
+      .content_right__free_message--up
+        本人希望記入欄
+      .content_right__free_message--down
+        = @resume.free_message
+

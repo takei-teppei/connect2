@@ -1,0 +1,87 @@
+.user_space{
+  background-color: seashell;
+  display: flex;
+  height: 100vh;
+}
+
+.side-bar{
+  background-color: white;
+  height: 140px;
+  border:1px solid black;
+  margin: 100px 100px  100px 200px;
+  &__submit{
+    @include side_btn;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+    &--link{
+      text-decoration: none;
+      color: black;
+    }
+  }
+  &__no_submit{
+    @include side_btn;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+    &--link2{
+      text-decoration: none;
+      color: black;
+    }
+  }
+  &__edit{
+    @include side_btn;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+    &--link3{
+      text-decoration: none;
+      color: black;
+    }
+  }
+  &__O_page{
+    @include side_btn;
+    padding: 10px;
+  }
+}
+
+.user_mypage{
+  width: calc(100vw - 45%);
+  background-color: white;
+  border: 1px solid black;
+  margin: 100px 30px;
+  &__title{
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    padding: 25px;
+  }
+  &__middle{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    &--white{
+      @include box;
+      background-color: white;
+      border-top: 2px solid red;
+    }
+    &--gray{
+      @include box;
+      background-color: #EEEEEE;
+    }
+  }
+  &__bottom{
+    &__resume{
+      display: flex;
+      justify-content: space-between;
+      padding: 25px;
+      &__left{
+        &--name{
+          @include side_btn;
+          text-decoration: none;
+          color: black;
+        }
+        &--icon{
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

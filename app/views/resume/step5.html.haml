@@ -1,0 +1,45 @@
+.header
+  = render "header"
+
+.content
+  = render "content_top"
+  
+  .content_main
+    .content_main__head
+      .content_main__head--name
+        職歴を入力
+      .content_main__head--description
+        職歴がない場合は一番初めの入力欄に「なし」と入力します。
+        
+    .content_main__form
+      = form_for @resume, url: {controller: 'resume', action: 'validation5' }, html: {class: 'content_main__form--box'} do |f|
+        .content_main__form--award
+          職歴(職歴がない場合は「なし」と3項目目に入力)
+          %br
+          = f.text_field :a_y, placeholder: '2000', class: 'content_main__form--date'
+          = f.text_field :a_m, placeholder: '12', class: 'content_main__form--date'
+          = f.text_field :award, placeholder: '例) 職歴がない場合「なし」、ある場合は〇〇入社と入力', class: 'content_main__form--award'
+          %br
+          （職歴がない場合は以下の入力は大丈夫です）
+          %br
+          = f.text_field :a_y2, placeholder: '2000', class: 'content_main__form--date'
+          = f.text_field :a_m2, placeholder: '12', class: 'content_main__form--date'
+          = f.text_field :award2, placeholder: '例) 〇〇退社と入力', class: 'content_main__form--award'
+          %br
+          = f.text_field :a_y3, placeholder: '2000', class: 'content_main__form--date'
+          = f.text_field :a_m3, placeholder: '12', class: 'content_main__form--date'
+          = f.text_field :award3, placeholder: '例) 〇〇入社と入力', class: 'content_main__form--award'
+          %br
+          = f.text_field :a_y4, placeholder: '2000', class: 'content_main__form--date'
+          = f.text_field :a_m4, placeholder: '12', class: 'content_main__form--date'
+          = f.text_field :award4, placeholder: '例) 〇〇退社と入力', class: 'content_main__form--award'
+          %br
+          = f.text_field :a_y5, placeholder: '2000', class: 'content_main__form--date'
+          = f.text_field :a_m5, placeholder: '12', class: 'content_main__form--date'
+          = f.text_field :award5, placeholder: '例) 〇〇入社と入力', class: 'content_main__form--award'
+          %br
+          = f.text_field :a_y6, placeholder: '2000', class: 'content_main__form--date'
+          = f.text_field :a_m6, placeholder: '12', class: 'content_main__form--date'
+          = f.text_field :award6, placeholder: '例) 〇〇退社と入力', class: 'content_main__form--award'
+        .content_main__fotter5
+          = f.submit '次へ', class: 'content_main__fotter--right'

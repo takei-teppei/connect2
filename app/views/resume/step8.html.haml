@@ -1,0 +1,21 @@
+.header
+  = render "header"
+
+.content
+  = render "content_top"
+  
+  .content_main
+    .content_main__head
+      .content_main__head--name
+        本人希望欄を入力
+      .content_main__head--description
+        給与・職種・勤務時間などの希望を入力していきます。
+        
+    .content_main__form
+      = form_for @resume, url: {controller: 'resume', action: 'validation8' }, html: {class: 'content_main__form--box'} do |f|
+        .content_main__form--free_message
+          本人希望(任意)
+          %br
+          = f.text_area :free_message, class: 'content_main__form--free_message'
+        .content_main__fotter8
+          = f.submit '次へ', class: 'content_main__fotter--right'

@@ -1,0 +1,23 @@
+.header
+  = render "header"
+
+.content
+  = render "content_top"
+  
+  .content_main
+    .content_main__head
+      .content_main__head--name
+        連絡先を入力
+      .content_main__head--description
+        電話番号やEmailの入力を行います。
+        
+    .content_main__form
+      = form_for @resume, url: {controller: 'resume', action: 'validation3' },html: {class: 'content_main__form--box'} do |f|
+        電話
+        = f.text_field :tel, placeholder: '例) 0000-00-0000と入力', class: 'content_main__form--tel'
+        携帯電話
+        = f.text_field :cellphone, placeholder: '例) 000-0000-0000と入力', class: 'content_main__form--cellphone'
+        Email
+        = f.text_field :e_mail, placeholder: '', class: 'content_main__form--e_mail'
+        .content_main__fotter
+          = f.submit '次へ', class: 'content_main__fotter--right'

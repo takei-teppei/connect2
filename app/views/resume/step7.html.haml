@@ -1,0 +1,21 @@
+.header
+  = render "header"
+
+.content
+  = render "content_top"
+  
+  .content_main
+    .content_main__head
+      .content_main__head--name
+        志望動機を入力
+      .content_main__head--description
+        志望動機・特技・アピールポイントなどを入力していきます。
+        
+    .content_main__form
+      = form_for @resume, url: {controller: 'resume', action: 'validation7' }, html: {class: 'content_main__form--box'} do |f|
+        .content_main__form--motivation
+          志望動機
+          %br
+          = f.text_area :motivation, class: 'content_main__form--motivation'
+        .content_main__fotter7
+          = f.submit '次へ', class: 'content_main__fotter--right'

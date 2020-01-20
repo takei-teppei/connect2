@@ -1,0 +1,47 @@
+.header
+  = render "header"
+
+.content
+  = render "content_top"
+  
+  .content_main6
+    .content_main6__head6
+      .content_main6__head6--name
+        免許・資格を入力
+      .content_main6__head6--description
+        免許・資格がない場合は、何も入力せず「次へ」を押してください。
+        
+    .content_main6__form6
+      = form_for @resume, url: {controller: 'resume', action: 'validation6' }, html: {class: 'content_main__form--box'} do |f|
+        .content_main6__form6--license
+          免許・資格
+          %br
+          = f.text_field :l_y, placeholder: '2000', class: 'content_main6__form6--date'
+          = f.text_field :l_m, placeholder: '12', class: 'content_main6__form6--date'
+          = f.text_field :license, placeholder: '例) 〇〇取得と入力', class: 'content_main6__form6--license'
+          %br
+          免許・資格2
+          %br
+          = f.text_field :l_y2, placeholder: '2000', class: 'content_main6__form6--date'
+          = f.text_field :l_m2, placeholder: '12', class: 'content_main6__form6--date'
+          = f.text_field :license2, placeholder: '例) 〇〇取得と入力', class: 'content_main6__form6--license'
+          %br
+          免許・資格3
+          %br
+          = f.text_field :l_y3, placeholder: '2000', class: 'content_main6__form6--date'
+          = f.text_field :l_m3, placeholder: '12', class: 'content_main6__form6--date'
+          = f.text_field :license3, placeholder: '例) 〇〇取得と入力', class: 'content_main6__form6--license'
+          %br
+          免許・資格4
+          %br
+          = f.text_field :l_y4, placeholder: '2000', class: 'content_main6__form6--date'
+          = f.text_field :l_m4, placeholder: '12', class: 'content_main6__form6--date'
+          = f.text_field :license4, placeholder: '例) 〇〇取得と入力', class: 'content_main6__form6--license'
+          %br
+          免許・資格5
+          %br
+          = f.text_field :l_y5, placeholder: '2000', class: 'content_main6__form6--date'
+          = f.text_field :l_m5, placeholder: '12', class: 'content_main6__form6--date'
+          = f.text_field :license5, placeholder: '例) 〇〇取得と入力', class: 'content_main6__form6--license'
+        .content_main6__fotter6
+          = f.submit '次へ', class: 'content_main6__fotter6--right6'

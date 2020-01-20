@@ -1,0 +1,37 @@
+.content_top{
+  display: flex;
+  padding:30px 150px;
+  list-style:none;
+  margin:0 130px;
+  padding-right:0;
+  &__profile{
+    @include content_top;
+  }
+  &__sa{
+    @include content_top;
+  }
+  &__ci{
+    @include content_top;
+  }
+  &__e{
+    @include content_top;
+  }
+  &__a{
+    @include content_top;
+  }
+  &__wh{
+    @include content_top
+  }
+  &__license{
+    @include content_top;
+  }
+  &__free{
+    @include content_top;
+  }
+  &__motivation{
+    @include content_top;
+  }
+  &__completion{
+    @include content_top;
+  }
+}

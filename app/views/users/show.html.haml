@@ -1,0 +1,10 @@
+-# .header
+-#   = render "/resume/header"
+
+-# .user_space__showspace
+-#   .user_space__showspace--title
+-#     作成した履歴書一覧
+-#   .resume__name
+-#     -if current_user.id 
+-#       - @resumes.each do |resume|
+-#         = resume.resume_name

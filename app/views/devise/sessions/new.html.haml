@@ -1,0 +1,26 @@
+.new
+  .new__logo
+    = link_to 'Connect',resume_index_path,class:'new__logo--logo_name'
+    %br
+    = render "devise/shared/links"
+  .new__registration
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .new__registration--name
+        = f.label :name 
+        %em(6 characters maximum)
+        %br
+        = f.text_field :name, autofocus: true, maxlength: "6",class: "new__registration--name--size"
+      .new__registration--email
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email",class:"new__registration--email--size"
+      .new__registration--password
+        = f.label :password
+        %br/
+        = f.password_field :password, autocomplete: "current-password",class: "new__registration--password--size"
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me
+      .new__registration--submit
+        = f.submit "ログイン",class:"new__registration--submit--btn"

@@ -1,0 +1,493 @@
+*{
+  box-sizing: border-box;
+}
+
+.content_header{
+  text-align: right;
+  &__right{
+    padding:4px 45px 4px 0px;
+  }
+}
+
+.resume{
+  display: flex;
+  justify-content: space-around;
+}
+
+.content_left{
+  width:44%;
+  border:black 1px solid;
+}
+
+.content_upper{
+  &__profile{
+    position: relative;
+    &__top{
+      display: flex;
+      &--kana{
+        border-right:1px solid black;
+        padding:5px 10px 5px 3px;
+      }
+      &--name_kana{
+        padding:5px 135px 5px 3px;
+      }
+    }
+    &__middle{
+      display: flex;
+      &--name{
+        padding:30px 42px 30px 3px;
+        border-top:1px black dotted;
+      }
+      &--fullname{
+        padding:30px 192px 30px 3px;
+        border-top:1px black dotted;
+      }
+    }
+    &__bottom{
+      display: flex;
+      &--birth{
+        padding:5px 10px 5px 3px;
+        border-top:1px solid black;
+        border-right:1px solid black;
+        border-bottom: solid 1px black;
+      }
+      &--birthday{
+        padding:5px 320px 5px 3px;
+        border-top:1px solid black;
+        border-bottom: solid 1px black;
+      }
+    }
+    &--gender{
+      padding:48px 20px;
+      border-left:1px solid black;
+      border-style: none none none dotted;
+      position: absolute;
+      top:0px;
+      left:352px;
+    }
+    &--image{
+      border-left:1px black solid;
+      border-bottom:1px black solid;
+      padding:67px 27px 68px 27px;
+      position: absolute;
+      top: 0px;
+      right:0px;
+    }
+  }
+}
+
+.content_middle{
+  &__top{
+    display: flex;
+    &--a_kana{
+      padding:5px 10px 5px 3px;
+      border-right:1px solid black;
+      border-bottom: solid 1px black;
+      border-style:none solid dotted none;
+    }
+    &--address_kana{
+      border-bottom: solid 1px black;
+      border-style:none none dotted none;
+      padding:5px 477px 5px 3px;
+    }
+  }
+  &__up{
+    display: flex;
+    &--sa{
+      padding:6px 42px 5px 3px;
+    }
+    &--post_code{
+      padding:6px 320px 5px 3px;
+    }
+  }
+  &__perfectures{
+    padding:20px 42px 10px 3px;
+  }
+  &__build{
+    padding:2px 42px 15px 3px;
+  }
+  &__number{
+    display: flex;
+    &--tel{
+      width: 50%;
+      display: flex;
+      border-top:1px solid black;
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+      &--left{
+        padding:5px 42px 5px 3px;
+      }
+      &--right{
+        padding:5px 42px 5px 3px;
+      }
+    }
+    &--cellphone{
+      width:50%;
+      display: flex;
+      border-top:1px solid black;
+      border-bottom: 1px solid black;
+      &--left{
+        padding:5px 42px 5px 3px;
+      }
+      &--right{
+        padding:5px 42px 5px 3px;
+      }
+    }
+  }
+  &__e_mail{
+    width: 100%;
+    display: flex;
+    &--left{
+      width:14%;
+      padding:7px 30px 7px 3px;
+      border-bottom:1px solid black;
+    }
+    &--right{
+      width:86%;
+      padding:7px 42px 7px 3px;
+      border-bottom:1px solid black;
+    }
+  }
+}
+
+.content_bottom{
+  &__top{
+    display: flex;
+    &--e_y0{
+      @include top_y;
+    }
+    &--e_m0{
+      @include top_m;
+    }
+    &--e_education0{
+      @include top_form;
+    }
+  }
+  &__two{
+    display: flex;
+    &--e_y0{
+      width:15%;
+      padding:7px 30px;
+      border-right:1px dotted black;
+      border-bottom:1px black dotted;
+    }
+    &--e_m0{
+      width: 10%;
+      padding:7px 20px;
+      border-right:1px dotted black;
+      border-bottom:1px black dotted;
+    }
+    &--e_education0{
+      width:75%;
+      padding:7px 0px 7px 5px;
+      text-align: center;
+      border-bottom:1px black dotted;
+    }
+  }
+  &__three{
+    display: flex;
+    &--e_y{
+      @include main_y;
+    }
+    &--e_m{
+      @include main_m;
+    }
+    &--e_education{
+      @include main_form;
+    }
+  }
+  &__four{
+    display: flex;
+    &--e_y2{
+      @include main_y;
+    }
+    &--e_m2{
+      @include main_m;
+    }
+    &--e_education2{
+      @include main_form;
+    }
+  }
+  &__five{
+    display: flex;
+    &--e_y3{
+      @include main_y;
+    }
+    &--e_m3{
+      @include main_m;
+    }
+    &--e_education3{
+      @include main_form;
+    }
+  }
+  &__six{
+    display: flex;
+    &--e_y4{
+      @include main_y;
+    }
+    &--e_m4{
+      @include main_m;
+    }
+    &--e_education4{
+      @include main_form;
+    }
+  }
+  &__seven{
+    display: flex;
+    &--e_y5{
+      @include main_y;
+    }
+    &--e_m5{
+      @include main_m;
+    }
+    &--e_education5{
+      @include main_form;
+    }
+  }
+  &__eight{
+    display: flex;
+    &--e_y6{
+      @include main_y;
+    }
+    &--e_m6{
+      @include main_m;
+    }
+    &--e_education6{
+      @include main_form;
+    }
+  }
+  &__nine{
+    display: flex;
+    &--e_y7{
+      width:15%;
+      padding:13px 30px;
+      border-right:1px dotted black;
+    }
+    &--e_m7{
+      width: 10%;
+      padding:13px 20px;
+      border-right:1px dotted black;
+    }
+    &--e_education7{
+      width:75%;
+      padding:13px 0px 13px 5px;
+    }
+  }
+}
+
+.content_right{
+  width: 44%;
+  border: black 1px solid;
+  &__wh{
+    &__top{
+      display: flex;
+      &--a_y{
+        @include top_y;
+      }
+      &--a_m{
+        @include top_m;
+      }
+      &--award{
+        @include top_form;
+      }
+    }
+    &__one{
+      display: flex;
+      &--a_y{
+        @include main_y;
+      }
+      &--a_m{
+        @include main_m;
+      }
+      &--award{
+        @include main_form;
+      }
+    }
+    &__two{
+      display: flex;
+      &--a_y2{
+        @include main_y;
+      }
+      &--a_m2{
+        @include main_m;
+      }
+      &--award2{
+        @include main_form;
+      }
+    }
+    &__three{
+      display: flex;
+      &--a_y3{
+        @include main_y;
+      }
+      &--a_m3{
+        @include main_m;
+      }
+      &--award3{
+        @include main_form;
+      }
+    }
+    &__four{
+      display: flex;
+      &--a_y4{
+        @include main_y;
+      }
+      &--a_m4{
+        @include main_m;
+      }
+      &--award4{
+        @include main_form;
+      }
+    }
+    &__five{
+      display: flex;
+      &--a_y5{
+        @include main_y;
+      }
+      &--a_m5{
+        @include main_m;
+      }
+      &--award5{
+        @include main_form;
+      }
+    }
+    &__six{
+      display: flex;
+      &--a_y6{
+        @include main_y;
+      }
+      &--a_m6{
+        @include main_m;
+      }
+      &--award6{
+        @include main_form;
+      }
+    }
+    &__bottom{
+      display: flex;
+      &--a_y{
+        width:15%;
+        padding:8px 30px;
+        border-right:1px dotted black;
+      }
+      &--a_m{
+        width: 10%;
+        padding:8px 20px;
+        border-right:1px dotted black;
+      }
+      &--award{
+        width:75%;
+        padding:8px 0px 8px 5px;
+      }
+    }
+  }
+
+  &__license{
+    &__top{
+      display: flex;
+      &--l_y{
+        @include top_y;
+        border-top: solid 1px black;
+      }
+      &--l_m{
+        @include top_m;
+        border-top: solid 1px black;
+      }
+      &--l_license{
+        @include top_form;
+        border-top: solid 1px black;
+      }
+    }
+    &__1{
+      display: flex;
+      &--l_y{
+        @include main_y;
+      }
+      &--l_m{
+        @include main_m;
+      }
+      &--l_license{
+        @include main_form;
+      }
+    }
+    &__2{
+      display: flex;
+      &--l_y2{
+        @include main_y;
+      }
+      &--l_m2{
+        @include main_m;
+      }
+      &--l_license2{
+        @include main_form;
+      }
+    }
+    &__3{
+      display: flex;
+      &--l_y3{
+        @include main_y;
+      }
+      &--l_m3{
+        @include main_m;
+      }
+      &--l_license3{
+        @include main_form;
+      }
+    }
+    &__4{
+      display: flex;
+      &--l_y4{
+        @include main_y;
+      }
+      &--l_m4{
+        @include main_m;
+      }
+      &--l_license4{
+        @include main_form;
+      }
+    }
+    &__5{
+      display: flex;
+      &--l_y5{
+        width:15%;
+        padding:8px 30px;
+        border-right:1px dotted black;
+      }
+      &--l_m5{
+        width: 10%;
+        padding:8px 20px;
+        border-right:1px dotted black;
+      }
+      &--l_license5{
+        width:75%;
+        padding:8px 0px 8px 5px;
+      }
+    }
+  }
+
+  &__motivation{
+    &--up{
+      font-size:14px;
+      padding:5px 3px;
+      border-top: black 1px solid;
+      border-bottom: solid 1px black;
+    }
+    &--down{
+      font-size:13px;
+      padding:25px 3px;
+      border-bottom: black 1px solid;
+    }
+  }
+
+  &__free_message{
+    &--up{
+      font-size:14px;
+      padding:5px 3px;
+      border-bottom: solid 1px black;
+    }
+    &--down{
+      font-size:13px;
+      padding:25px 3px;
+    }
+  }
+}

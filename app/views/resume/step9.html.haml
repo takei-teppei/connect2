@@ -1,0 +1,29 @@
+.header
+  = render "header"
+
+.content
+  = render "content_top"
+  
+  .content_main9
+    .content_main9__head9
+      .content_main9__head9--name9
+        履歴書の作成日を入力
+      .content_main9__head9--description9
+        本日の日付を入力していきます。
+
+    .content_main9__form9
+      = form_for @resume, url: {controller: 'resume', action: 'validation9' }, html: {class: 'content_main__form--box'} do |f|
+        .content_main9__form9
+          本日の日付
+          %br
+          = f.text_field :submit_date,placeholder: '例) 2000年○月○日', class: 'content_main9__form9--submit_date'
+          履歴書の名前
+          %br
+          = f.text_field :resume_name, placeholder: '検索時に使用する名前を入力', class: 'content_main9__form9--resume_name'
+          パスワード
+          %br
+          = f.password_field :password,placeholder: '検索時に使用するパスワードを入力',class:"content_main9__form9--password",id:"password"
+          %input#js-passcheck{type: "checkbox"}
+          %label{for: "js-passcheck"} パスワードを表示する
+        .content_main9__fotter9
+          = f.submit '完成', class: 'content_main9__fotter9--right9'

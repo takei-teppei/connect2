@@ -1,0 +1,30 @@
+.new
+  .new__logo
+    = link_to 'Connect',resume_index_path,class:'new__logo--logo_name'
+    %br
+    = render "devise/shared/links"
+  .new__registration
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .new__registration--name
+        = f.label :name 
+        %em(6 characters maximum)
+        %br
+        = f.text_field :name, autofocus: true, maxlength: "6",class: "new__registration--name--size"
+      .new__registration--email
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email",class:"new__registration--email--size"
+      .new__registration--password
+        = f.label :password
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} characters minimum)
+        %br/
+        = f.password_field :password, autocomplete: "new-password",class: "new__registration--password--size"
+      .new__registration--password_confirmation
+        = f.label :password_confirmation
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password",class: "new__registration--password_confirmation--size"
+      .new__registration--submit
+        = f.submit "新規登録",class:"new__registration--submit--btn"

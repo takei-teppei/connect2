@@ -1,0 +1,86 @@
+@mixin content_top{
+  color: black;
+  background: wheat;
+  text-decoration: none;
+  border:1px solid black;
+  border-radius:5px;
+  padding:5px 6px;
+  margin-right:20px;
+}
+
+@mixin form{
+  width:300px;
+  display: block;
+  padding:10px 0;
+  margin-bottom:5px;
+}
+
+@mixin form_date{
+  width:40px;
+  padding:5px 0px 5px 3px;
+  margin-bottom:5px;
+}
+
+@mixin form_main{
+  width:400px;
+  display:inline;
+  padding:5px 0px 5px 3px;
+  margin-bottom:5px;
+}
+
+@mixin top_y{
+  width:15%;
+  padding:10px 30px;
+  border-right:1px dotted black;
+  border-bottom:5px black double;
+}
+
+@mixin top_m{
+  width: 10%;
+  padding:10px 20px;
+  border-right:1px dotted black;
+  border-bottom:5px black double;
+}
+
+@mixin top_form{
+  width:75%;
+  padding:10px 0px 7px 5px;
+  border-bottom:5px black double;
+  text-align: center;
+}
+
+@mixin main_y{
+  width:15%;
+  padding:8px 30px;
+  border-right:1px dotted black;
+  border-bottom:1px black dotted;
+}
+
+@mixin main_m{
+  width: 10%;
+  padding:8px 20px;
+  border-right:1px dotted black;
+  border-bottom:1px black dotted;
+}
+
+@mixin main_form{
+  width:75%;
+  padding:8px 0px 8px 5px;
+  border-bottom:1px black dotted;
+}
+
+@mixin side_btn{
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+}
+
+@mixin box {
+  width: calc(100% / 2);
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  padding: 25px;
+  text-decoration: none;
+  color: black;
+}

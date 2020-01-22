@@ -1,0 +1,22 @@
+.header
+  = render "/resume/header"
+
+.user_space
+  = render "/users/side_bar"
+  
+  .user_mypage
+    .user_mypage__title
+      履歴書一覧
+    .user_mypage__middle
+      = link_to "完了",done_users_path,class:"user_mypage__middle--gray"
+      = link_to "編集中",unedited_users_path,class:"user_mypage__middle--white"
+    .user_mypage__bottom
+      - @resumes.each do |resume|
+        .user_mypage__bottom__resume
+          .user_mypage__bottom__resume__left
+            = link_to "/resume/#{resume.id}",method: :get,class:"user_mypage__bottom__resume__left--name" do
+              = resume.resume_name
+              %br
+              作成日:
+              = resume.created_at.strftime("%Y年%m月%d日")
+          = icon('fas', 'angle-right', class: 'user_mypage__bottom__resume__left--icon')

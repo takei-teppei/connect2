@@ -1,0 +1,53 @@
+.content{
+  width:100vw;
+  height:100vh;
+  background-color: beige;
+}
+
+.content_main9{
+  width:calc(100vw - 700px);
+  height:calc(100vh - 200px);
+  background-color: white;
+  border: whitesmoke solid 1px;
+  display: block;
+  margin:10px auto 100px auto;
+  position: relative;
+  &__head9{
+    font-size:15px;
+    padding:10px 20px;
+    border-bottom: solid 1px gray;
+  }
+  &__form9{
+    height:350px;
+    padding:20px;
+    font-size:15px;
+    &--submit_date{
+      @include form;
+    }
+    &--resume_name{
+      @include form;
+    }
+    &--password{
+      @include form;
+    }
+  }
+  &__fotter9{
+    position: absolute;
+    bottom:0px;
+    right:250px;
+    &--right9{
+      color: wheat;
+      background-color:red;
+      font-size:20px;
+      float:right;
+      text-decoration:none;
+      padding:5px 20px;
+      margin:50px 20px 5px 20px;
+      border-radius:10px;
+      cursor: pointer;
+    }
+    &:hover{
+      opacity:50%;
+    }
+  }
+}

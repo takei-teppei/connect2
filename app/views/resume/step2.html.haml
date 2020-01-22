@@ -1,0 +1,25 @@
+.header
+  = render "header"
+
+.content
+  = render "content_top"
+  
+  .content_main
+    .content_main__head
+      .content_main__head--name
+        住所を入力
+      .content_main__head--description
+        郵便番号・住所の入力を行います。
+        
+    .content_main__form
+      = form_for @resume, url: {controller: 'resume', action: 'validation2' }, html: {class: 'content_main__form--box'} do |f|
+        郵便番号
+        = f.text_field :post_code, placeholder: '例) 000-0000と入力', class: 'content_main__form--post_code'
+        都道府県・市町村・番地
+        = f.text_field :perfectures, placeholder: '例) ○県○市○番地と入力', class: 'content_main__form--perfectures'
+        フリガナ
+        = f.text_field :address_kana, placeholder: '例) 住所のフリガナを入力', class: 'content_main__form--address_kana'
+        マンション・建物名
+        = f.text_field :build, placeholder: '○マンション○号室と入力', class: 'content_main__form--build'
+        .content_main__fotter2
+          = f.submit '次へ', class: 'content_main__fotter2--right2'

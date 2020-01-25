@@ -1,5 +1,6 @@
 class Resume < ApplicationRecord
   has_secure_password
+  mount_uploader :image, ImageUploader
   belongs_to :user
 
   validates :fullname,               presence: true, length: {maximum: 10}

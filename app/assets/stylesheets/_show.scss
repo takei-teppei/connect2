@@ -41,6 +41,8 @@
       &--fullname{
         padding:30px 192px 30px 3px;
         border-top:1px black dotted;
+        white-space: nowrap;
+        width: 43.5%;
       }
     }
     &__bottom{
@@ -52,13 +54,15 @@
         border-bottom: solid 1px black;
       }
       &--birthday{
-        padding:5px 320px 5px 3px;
+        padding:5px 289px 5px 3px;
         border-top:1px solid black;
         border-bottom: solid 1px black;
+        white-space: nowrap;
+        width: 62.5%;
       }
     }
     &--gender{
-      padding:48px 20px;
+      padding:48px 50px;
       border-left:1px solid black;
       border-style: none none none dotted;
       position: absolute;
@@ -68,7 +72,7 @@
     &--image{
       border-left:1px black solid;
       border-bottom:1px black solid;
-      padding:67px 27px 68px 27px;
+      padding:67px 27px 69px 27px;
       position: absolute;
       top: 0px;
       right:0px;
@@ -88,7 +92,9 @@
     &--address_kana{
       border-bottom: solid 1px black;
       border-style:none none dotted none;
-      padding:5px 477px 5px 3px;
+      padding:5px 130px 5px 3px;
+      white-space: nowrap;
+      width: 87.5%;
     }
   }
   &__up{

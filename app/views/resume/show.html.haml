@@ -122,8 +122,11 @@
       .content_bottom__nine
         .content_bottom__nine--e_y7
         .content_bottom__nine--e_m7
-        .content_bottom__nine--e_education7
-          現在に至る
+        - if @resume.e_y.present?
+          .content_bottom__nine--e_education7
+            現在に至る
+        - else
+
             
   .content_right
     .content_right__wh
@@ -179,8 +182,10 @@
       .content_right__wh__bottom
         .content_right__wh__bottom--a_y
         .content_right__wh__bottom--a_m
-        .content_right__wh__bottom--award
-          現在に至る
+        -if @resume.a_y.present?
+          .content_right__wh__bottom--award
+            現在に至る
+        -else
     
     .content_right__license
       .content_right__license__top

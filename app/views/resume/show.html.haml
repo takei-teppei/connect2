@@ -27,8 +27,7 @@
             = @resume.birthday
         .content_upper__profile--gender
           = @resume.gender
-        .content_upper__profile--image
-          @resume.image
+        = image_tag '', size:"160x155", class:"content_upper__profile--image"
     
     .content_middle
       .content_middle__top

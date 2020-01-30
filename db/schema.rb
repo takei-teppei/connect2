@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 2020_01_20_121539) do
     t.text "free_message", null: false
     t.text "motivation", null: false
     t.string "password_digest"
+    t.string "image"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

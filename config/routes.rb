@@ -2,13 +2,14 @@ Rails.application.routes.draw do
   devise_for :users
   root 'resume#index'
   
-  resources :users, only: [:index,:show] do
+  resources :users, only: [:index,:new,:create,:show] do
     collection do
       get 'done'
       get 'unedited'
     end
   end
-  resources :resume ,only: [:index,:create,:show] do 
+
+  resources :resume do 
     collection do
       get 'step1'
       post 'step1' =>'resume#validation'

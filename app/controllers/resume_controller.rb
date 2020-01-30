@@ -831,90 +831,21 @@ class ResumeController < ApplicationController
     @resume.save
     check_resume_valid = @resume.valid?
     unless check_resume_valid
-      render :step9
-    else
-      session[:through_ninth_valid] = "through_ninth_valid"
-      redirect_to action: 'create'
-    end
-  end
-
-  def create
-    @resume = Resume.new(
-      fullname: session[:fullname],
-      name_kana: session[:name_kana],
-      birthday: session[:birthday],
-      gender: session[:gender],
-      post_code: session[:post_code], 
-      address_kana: session[:address_kana], 
-      perfectures: session[:perfectures], 
-      build: session[:build], 
-      tel: session[:tel], 
-      cellphone: session[:cellphone],
-      e_mail: session[:e_mail],
-      e_y: session[:e_y],
-      e_m: session[:e_m], 
-      education_j: session[:education_j], 
-      e_y2: session[:e_y2],
-      e_m2: session[:e_m2], 
-      education2_j: session[:education2_j], 
-      e_y3: session[:e_y3], 
-      e_m3: session[:e_m3], 
-      education3_h: session[:education3_h], 
-      e_y4: session[:e_y4], 
-      e_m4: session[:e_m4], 
-      education4_h: session[:education4_h], 
-      e_y5: session[:e_y5], 
-      e_m5: session[:e_m5], 
-      education5_c: session[:education5_c], 
-      e_y6: session[:e_y6], 
-      e_m6: session[:e_m6], 
-      education6_c: session[:education6_c], 
-      a_y: session[:a_y], 
-      a_m: session[:a_m], 
-      award: session[:award], 
-      a_y2: session[:a_y2], 
-      a_m2: session[:a_m2], 
-      award2: session[:award2], 
-      a_y3: session[:a_y3], 
-      a_m3: session[:a_m3], 
-      award3: session[:award3], 
-      a_y4: session[:a_y4], 
-      a_m4: session[:a_m4], 
-      award4: session[:award4], 
-      a_y5: session[:a_y5], 
-      a_m5: session[:a_m5], 
-      award5: session[:award5], 
-      a_y6: session[:a_y6], 
-      a_m6: session[:a_m6], 
-      award6: session[:award6], 
-      l_y: session[:l_y], 
-      l_m: session[:l_m], 
-      license: session[:license], 
-      l_y2: session[:l_y2], 
-      l_m2: session[:l_m2], 
-      license2: session[:license2], 
-      l_y3: session[:l_y3], 
-      l_m3: session[:l_m3], 
-      license3: session[:license3], 
-      l_y4: session[:l_y4], 
-      l_m4: session[:l_m4], 
-      license4: session[:license4], 
-      l_y5: session[:l_y5], 
-      l_m5: session[:l_m5], 
-      license5: session[:license5], 
-      motivation: session[:motivation], 
-      free_message: session[:free_message], 
-      submit_date: session[:submit_date],
-      password:session[:password]
-    )
-    @resume.save
-    unless @resume.save
       reset_session
       render step1_resume_index_path
     else
-      reset_session
+      session[:through_ninth_valid] = "through_ninth_valid"
       redirect_to root_path
     end
+  end
+
+  def new
+    @image = Image.new
+  end
+
+  def create
+    @image = Image.new(image_params)
+    @image.save
   end
   
   def show
@@ -1032,5 +963,9 @@ class ResumeController < ApplicationController
 
   def redirect_to_step9
     redirect_to step9_resume_index_path unless session[:through_ninth_valid].present? && session[:through_ninth_valid] == "through_ninth_valid"
+  end
+
+  def image_params
+    params.require(:image).permit(:image)
   end
 end

@@ -36,6 +36,10 @@
       color: black;
     }
   }
+  &__new{
+    @include side_btn;
+    padding: 10px;
+  }
   &__O_page{
     @include side_btn;
     padding: 10px;

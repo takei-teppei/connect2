@@ -1,0 +1,10 @@
+.header
+  = render "/resume/header"
+
+.user_space
+  = render "/users/side_bar"
+  
+  = form_for @image, url: {controller: 'resume', action: 'create' } do |f|
+    = f.file_field :image
+    = f.submit '登録する'
+    

@@ -18,15 +18,6 @@
       color: black;
     }
   }
-  &__no_submit{
-    @include side_btn;
-    padding: 10px;
-    border-bottom: 1px solid gray;
-    &--link2{
-      text-decoration: none;
-      color: black;
-    }
-  }
   &__edit{
     @include side_btn;
     padding: 10px;
@@ -35,10 +26,6 @@
       text-decoration: none;
       color: black;
     }
-  }
-  &__new{
-    @include side_btn;
-    padding: 10px;
   }
   &__O_page{
     @include side_btn;

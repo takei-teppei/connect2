@@ -850,7 +850,8 @@ class ResumeController < ApplicationController
   end
 
   def update
-    if Resume.update(resume_image_params)
+    @resume = Resume.find(params[:id])
+    if @resume.update(resume_image_params)
       redirect_to done_users_path
     else
       render :show
@@ -1041,9 +1042,5 @@ class ResumeController < ApplicationController
 
   def redirect_to_step9
     redirect_to step9_resume_index_path unless session[:through_ninth_valid].present? && session[:through_ninth_valid] == "through_ninth_valid"
-  end
-
-  def image_params
-    params.require(:resume).permit(:image)
   end
 end

@@ -27,8 +27,16 @@
             = @resume.birthday
         .content_upper__profile--gender
           = @resume.gender
-        = image_tag '', size:"160x155", class:"content_upper__profile--image"
-    
+        - if @resume.image.present?
+          = image_tag @resume.image.to_s, size:"160x155", class:"content_upper__profile--image"
+        - else
+          = form_for @resume,url: {controller: 'resume', action: 'update' } do |f|
+            %label
+              = f.file_field :image,id:"",style:"display:none"
+              .content_upper__profile--image
+                画像を投稿する
+              = f.submit "投稿する"
+
     .content_middle
       .content_middle__top
         .content_middle__top--a_kana

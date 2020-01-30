@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :resume ,only: [:index,:new,:create,:show] do 
+  resources :resume do 
     collection do
       get 'step1'
       post 'step1' =>'resume#validation'

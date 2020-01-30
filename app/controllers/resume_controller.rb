@@ -840,16 +840,21 @@ class ResumeController < ApplicationController
   end
 
   def new
-    @image = Image.new
   end
 
   def create
-    @image = Image.new(image_params)
-    @image.save
   end
   
   def show
     @resume = Resume.find(params[:id])
+  end
+
+  def update
+    if Resume.update(resume_image_params)
+      redirect_to done_users_path
+    else
+      render :show
+    end
   end
 
   private
@@ -929,6 +934,79 @@ class ResumeController < ApplicationController
     ).merge(user_id: current_user.id)
   end
 
+  def resume_image_params
+    params.require(:resume).permit(
+      :fullname,
+      :name_kana,
+      :gender,
+      :birthday,
+      :post_code,
+      :perfectures,
+      :address_kana,
+      :build,
+      :tel,
+      :cellphone,
+      :e_mail,
+      :e_y,
+      :e_m,
+      :education_j,
+      :e_y2,
+      :e_m2,
+      :education2_j,
+      :e_y3,
+      :e_m3,
+      :education3_h,
+      :e_y4,
+      :e_m4,
+      :education4_h,
+      :e_y5,
+      :e_m5,
+      :education5_c,
+      :e_y6,
+      :e_m6,
+      :education6_c,
+      :a_y,
+      :a_m,
+      :award,
+      :a_y2,
+      :a_m2,
+      :award2,
+      :a_y3,
+      :a_m3,
+      :award3,
+      :a_y4,
+      :a_m4,
+      :award4,
+      :a_y5,
+      :a_m5,
+      :award5,
+      :a_y6,
+      :a_m6,
+      :award6,
+      :l_y,
+      :l_m,
+      :license,
+      :l_y2,
+      :l_m2,
+      :license2,
+      :l_y3,
+      :l_m3,
+      :license3,
+      :l_y4,
+      :l_m4,
+      :license4,
+      :l_y5,
+      :l_m5,
+      :license5,
+      :free_message,
+      :motivation,
+      :submit_date,
+      :resume_name,
+      :password,
+      :image
+    ).merge(user_id: current_user.id)
+  end
+
   def redirect_to_step1
     redirect_to step1_resume_index_path unless session[:through_first_valid].present? && session[:through_first_valid] == "through_first_valid"
   end
@@ -966,6 +1044,6 @@ class ResumeController < ApplicationController
   end
 
   def image_params
-    params.require(:image).permit(:image)
+    params.require(:resume).permit(:image)
   end
 end

@@ -858,6 +858,15 @@ class ResumeController < ApplicationController
     end
   end
 
+  def destroy
+    @resume = Resume.find(params[:id])
+    if @resume.destroy
+      redirect_to done_users_path
+    else
+      render :show
+    end
+  end
+
   private
   def move_to_index
     redirect_to action: :index unless user_signed_in?

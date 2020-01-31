@@ -19,4 +19,4 @@
               %br
               作成日:
               = resume.created_at.strftime("%Y年%m月%d日")
-          = icon('fas', 'angle-right', class: 'user_mypage__bottom__resume__left--icon')
+          = link_to "削除" ,resume_path(resume),method: :delete,class:"user_mypage__bottom__resume__left--delete"

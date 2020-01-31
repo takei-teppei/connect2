@@ -1,14 +1,14 @@
 class ResumeController < ApplicationController
   before_action :move_to_index, except: [:index]
-  before_action :redirect_to_step1, except: [:index,:step1,:validation,:show]
-  before_action :redirect_to_step2, except: [:index,:step1,:validation,:step2,:validation2,:show]
-  before_action :redirect_to_step3, except: [:index,:step1,:validation,:step2,:validation2,:step3,:validation3,:show]
-  before_action :redirect_to_step4, except: [:index,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:show]
-  before_action :redirect_to_step5, except: [:index,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:show]
-  before_action :redirect_to_step6, except: [:index,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:show]
-  before_action :redirect_to_step7, except: [:index,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:show]
-  before_action :redirect_to_step8, except: [:index,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:step8,:validation8,:show]
-  before_action :redirect_to_step9, except: [:index,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:step8,:validation8,:step9,:validation9,:show]
+  before_action :redirect_to_step1, except: [:index,:destroy,:step1,:validation,:show]
+  before_action :redirect_to_step2, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:show]
+  before_action :redirect_to_step3, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:show]
+  before_action :redirect_to_step4, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:show]
+  before_action :redirect_to_step5, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:show]
+  before_action :redirect_to_step6, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:show]
+  before_action :redirect_to_step7, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:show]
+  before_action :redirect_to_step8, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:step8,:validation8,:show]
+  before_action :redirect_to_step9, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:step8,:validation8,:step9,:validation9,:show]
 
   def index
   end
@@ -863,7 +863,7 @@ class ResumeController < ApplicationController
     if @resume.destroy
       redirect_to done_users_path
     else
-      render :show
+      redirect_to done_users_path
     end
   end
 

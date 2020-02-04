@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     collection do
       get 'done'
       get 'unedited'
+      get 'search'
     end
   end
 

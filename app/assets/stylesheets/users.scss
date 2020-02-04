@@ -1,5 +1,5 @@
 .user_space{
-  background-color: seashell;
+  background-image:url("p0469_m.jpeg");
   display: flex;
   height: 100vh;
 }
@@ -7,10 +7,13 @@
 .side-bar{
   background-color: white;
   height: 140px;
-  border:1px solid black;
+  border:1px solid gray;
+  border-radius: 1%;
+  text-align: center;
   margin: 100px 100px  100px 200px;
   &__submit{
     @include side_btn;
+    width: 150px;
     padding: 10px;
     border-bottom: 1px solid gray;
     &--link{

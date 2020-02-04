@@ -1,35 +1,71 @@
 .choice{
-  height:calc(100vh - 50px);
-  background-color: papayawhip;
-  position: relative;
-  &__left{
-    position: absolute;
-    top:300px;
-    left:200px;
-    &--new{
-      background-color: red;
-      text-decoration: none;
-      font-size: 30px;
-      color: white;
-      border: snow;
-      border-radius: 20px;
-      margin-top:300px;
-      padding:100px 80px;
+  background-image: url("p0469_m.jpeg");
+  &__top{
+    &--title{
+      margin-left: 200px;
+      color: #7e6446;
+    }
+    &--image{
+      margin: 20px 15%;
     }
   }
-  &__right{
-    position: absolute;
-    top:300px;
-    right:200px;
-    &--show{
-      background-color: green;
-      text-decoration: none;
+  &__introduction{
+    text-align: center;
+    margin-top: 50px;
+    &--title{
       font-size: 30px;
-      color: white;
-      border: snow;
-      border-radius: 20px;
-      margin-top:300px;
-      padding:100px 60px;
+      font-family: 'Montserrat Subrayada', sans-serif;
+      color: #624626;
+      margin-bottom: 15px;
+    }
+    &--description{
+      font-weight: 600;
+      color: #7e6446;
+    }
+  }
+  &__howto{
+    text-align: center;
+    margin-top: 50px;
+    &--title{
+      font-size: 30px;
+      font-family: 'Montserrat Subrayada', sans-serif;
+      color: #624626;
+      margin-bottom: 15px;
+    }
+    &--use{
+      font-weight: 600;
+      color: #7e6446;
+    }
+  }
+  &__try{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    &--title{
+      text-align: center;
+      font-size: 30px;
+      font-family: 'Montserrat Subrayada', sans-serif;
+      color: #624626;
+    }
+  }
+  &__click{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 50px;
+    &--left{
+      text-decoration: none;
+      font-size: 60px;
+      color: #ebdac6;
+      background-color:#4f8153f6;
+      border-radius: 10px;
+      padding: 10px;
+    }
+    &--right{
+      text-decoration: none;
+      font-size: 60px;
+      color: #ebdac6;
+      background-color:#a07061f6;
+      border-radius: 10px;
+      padding: 10px;
     }
   }
 }

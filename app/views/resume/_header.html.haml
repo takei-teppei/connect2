@@ -1,8 +1,9 @@
 .header__left
-  Connect
+  .header__left--title
+    ネットでできる履歴書アプリ
+  = link_to 'Connect',root_path,class: "header__left--logo"
 .header__right
   - if user_signed_in?
-    = link_to '一覧ページへ',resume_index_path,class:'header__right--show'
     = link_to 'ログアウト', destroy_user_session_path,method: :delete,class:'header__right--out'
   - else
     = link_to "ログイン", new_user_session_path, class: 'header__right--show'

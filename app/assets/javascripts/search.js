@@ -44,9 +44,9 @@ $(function(){
     $(`#${userid}`).append(html);
   }
 
-  var form = $(".search__userform--form");
-  $(form).on("keyup", function(){
-    var input = form.val();
+  // var form = $(".search__userform--form");
+  $(document).on("keyup",".search__userform--form", function(){
+    var input = $(this).val();
     $.ajax({
       type: "GET",
       url: "/users/search",

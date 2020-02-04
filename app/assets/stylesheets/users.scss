@@ -9,9 +9,11 @@
   height: 140px;
   border:1px solid gray;
   border-radius: 1%;
+  text-align: center;
   margin: 100px 100px  100px 200px;
   &__submit{
     @include side_btn;
+    width: 150px;
     padding: 10px;
     border-bottom: 1px solid gray;
     &--link{

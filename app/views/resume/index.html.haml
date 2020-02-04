@@ -2,7 +2,30 @@
   = render "header"
 
 .choice
-  .choice__left
-    = link_to "履歴書を作成する",step1_resume_index_path,class:"choice__left--new"
-  .choice__right
-    = link_to "作成した履歴書を見る",done_users_path,class:"choice__right--show"
+  .choice__top
+    .choice__top--title
+      〜あなたと職場を繋ぐ〜
+    = image_tag "IMG_1801.JPG",size:"900x400", class: 'choice__top--image'
+    
+  .choice__introduction
+    .choice__introduction--title
+      introduction
+    .choice__introduction--description
+      かつて手書きで書いていた履歴書が<br>
+      パソコン、スマホを使ってすぐに作れます。<br>
+
+  .choice__howto
+    .choice__howto--title
+      How to?
+    .choice__howto--use
+      ログインor新規登録すると<br>
+      Writeから履歴書が作れます。<br>
+      履歴書をみたい場合はCheckをクリック！
+
+  .choice__try
+    .choice__try--title
+      Let's try!
+  .choice__click
+    = link_to "Write",step1_resume_index_path,class:"choice__click--left"
+    = link_to "Check",done_users_path,class:"choice__click--right"
+

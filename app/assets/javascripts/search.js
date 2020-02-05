@@ -27,7 +27,7 @@ $(function(){
   function deleteUser(name,id){
     var html =`
               <div class="search__member--right" id = "${id}">
-                <input name='group[user_ids][]' type='hidden' value= current_usre.id>
+                <input name='group[user_ids][]' type='hidden' value= "${id}">
                 <div class="search__member--addname">
                   ${name}
                 </div>
@@ -44,12 +44,11 @@ $(function(){
     $(`#${userid}`).append(html);
   }
 
-  // var form = $(".search__userform--form");
   $(document).on("keyup",".search__userform--form", function(){
     var input = $(this).val();
     $.ajax({
       type: "GET",
-      url: "/users/search",
+      url: "/resume/" + 9 + "/search",
       dataType: 'json',
       data: { keyword: input},
     })

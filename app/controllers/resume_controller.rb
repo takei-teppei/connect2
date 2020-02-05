@@ -1,14 +1,14 @@
 class ResumeController < ApplicationController
   before_action :move_to_index, except: [:index]
-  before_action :redirect_to_step1, except: [:index,:destroy,:step1,:validation,:show]
-  before_action :redirect_to_step2, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:show]
-  before_action :redirect_to_step3, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:show]
-  before_action :redirect_to_step4, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:show]
-  before_action :redirect_to_step5, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:show]
-  before_action :redirect_to_step6, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:show]
-  before_action :redirect_to_step7, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:show]
-  before_action :redirect_to_step8, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:step8,:validation8,:show]
-  before_action :redirect_to_step9, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:step8,:validation8,:step9,:validation9,:show]
+  before_action :redirect_to_step1, except: [:index,:destroy,:search,:step1,:validation,:show]
+  before_action :redirect_to_step2, except: [:index,:destroy,:search,:step1,:validation,:step2,:validation2,:show]
+  before_action :redirect_to_step3, except: [:index,:destroy,:search,:step1,:validation,:step2,:validation2,:step3,:validation3,:show]
+  before_action :redirect_to_step4, except: [:index,:destroy,:search,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:show]
+  before_action :redirect_to_step5, except: [:index,:destroy,:search,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:show]
+  before_action :redirect_to_step6, except: [:index,:destroy,:search,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:show]
+  before_action :redirect_to_step7, except: [:index,:destroy,:search,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:show]
+  before_action :redirect_to_step8, except: [:index,:destroy,:search,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:step8,:validation8,:show]
+  before_action :redirect_to_step9, except: [:index,:destroy,:search,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:step8,:validation8,:step9,:validation9,:show]
 
   def index
   end
@@ -847,6 +847,21 @@ class ResumeController < ApplicationController
   
   def show
     @resume = Resume.find(params[:id])
+  end
+
+  def search
+    @resume = Resume.find(params[:id])
+    return nil if params[:keyword] == ""
+    @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"] ).where.not(id: current_user.id).limit(10)
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  def adduser
+    @resume = Resume.find(params[:id])
+    @resume.update(resume_name: user.id)
   end
 
   def update

@@ -4,7 +4,7 @@
   width: calc(100vw - 40%);
   height:calc(100vh - 30vh) ;
   background-color: white;
-  margin: 100px 100px 50px 0px;
+  margin: 30px 100px 50px 0px;
   &__title{
     font-size: 20px;
     font-weight: 600;
@@ -60,6 +60,7 @@
       width: calc(100vw - 65vw);
       display: flex;
       padding-bottom: 5px;
+      margin-bottom: 10px;
       justify-content: space-between;
       border-bottom:1px solid gray;
     }
@@ -68,11 +69,16 @@
       cursor: pointer;
     }
   }
+
   &--submit{
     color: white;
+    cursor: pointer;
     background-color: #0aa7fb;
     border-radius: 5px;
     padding: 10px 30px;
-    margin: 100px 45% 0px;
+    margin: 30px 45% 0px;
+    &:hover{
+      opacity: 70%;
+    }
   }
 }

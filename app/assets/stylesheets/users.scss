@@ -1,7 +1,7 @@
 .user_space{
   background-image:image-url("p0469_m.jpeg");
-  display: flex;
   height: 100vh;
+  display: flex;
 }
 
 .side-bar{
@@ -10,7 +10,7 @@
   border:1px solid gray;
   border-radius: 1%;
   text-align: center;
-  margin: 100px 100px  100px 200px;
+  margin: 30px 100px  100px 200px;
   &__submit{
     @include side_btn;
     width: 150px;
@@ -38,9 +38,11 @@
 
 .user_mypage{
   width: calc(100vw - 45%);
+  height: 70%;
   background-color: white;
   border: 1px solid black;
-  margin: 100px 30px;
+  border-radius: 5px;
+  margin: 30px;
   overflow: scroll;
   &__title{
     font-size: 18px;

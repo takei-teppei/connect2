@@ -1,0 +1,20 @@
+.header
+  = render "/resume/header"
+
+.user_space
+  = render "/users/side_bar"
+  
+  = form_for @users.to_s,url: adduser_resume_path(@resume) ,html:{class:"search"} do |f|
+    .search__title
+      履歴書を見て欲しいユーザーを検索する
+    .search__userform
+      .search__userform--name
+        検索したいユーザー名
+      = f.text_field  :name ,class:"search__userform--form"
+    #userspace
+
+    .search__member
+      .search__member--left
+        追加するユーザー
+      #add_userspace
+    = f.submit "登録",class:"search--submit"

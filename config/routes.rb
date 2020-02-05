@@ -31,5 +31,10 @@ Rails.application.routes.draw do
       get 'step9'
       post 'step9' =>'resume#validation9'
     end
+    
+    member do
+      get 'search'
+      put 'adduser'
+    end
   end
 end

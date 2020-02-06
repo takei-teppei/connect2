@@ -6,7 +6,7 @@
 
 .side-bar{
   background-color: white;
-  height: 140px;
+  height: 24%;
   border:1px solid gray;
   border-radius: 1%;
   text-align: center;
@@ -23,14 +23,19 @@
   }
   &__edit{
     @include side_btn;
-    padding: 10px;
     border-bottom: 1px solid gray;
+    padding: 10px;
     &--link3{
       text-decoration: none;
       color: black;
     }
   }
-  &__O_page{
+  &__user{
+    @include side_btn;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+  }
+  &__index{
     @include side_btn;
     padding: 10px;
   }

@@ -27,7 +27,6 @@ $(function(){
   function deleteUser(name,id){
     var html =`
               <div class="search__member--right" id = "${id}">
-                <input name='group[user_ids][]' type='hidden' value= "${id}">
                 <div class="search__member--addname">
                   ${name}
                 </div>
@@ -48,7 +47,7 @@ $(function(){
     var input = $(this).val();
     $.ajax({
       type: "GET",
-      url: "/resume/" + 9 + "/search",
+      url: "/users/search/",
       dataType: 'json',
       data: { keyword: input},
     })

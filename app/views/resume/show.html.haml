@@ -5,7 +5,8 @@
   .content_header__right
     = @resume.submit_date
     現在
-    = link_to "見て欲しいユーザーを登録",search_resume_path(@resume),class:"content_header__right--user"
+    -if @resume.group_id.nil?
+      = link_to "見て欲しいユーザーを登録",edit_resume_path(@resume),class:"content_header__right--user"
 .resume
   .content_left
     .content_upper

@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_20_121539) do
+ActiveRecord::Schema.define(version: 2020_02_05_222321) do
+
+  create_table "group_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "group_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_group_users_on_group_id"
+    t.index ["user_id"], name: "index_group_users_on_user_id"
+  end
+
+  create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "resumes", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "resume_name", null: false
@@ -79,11 +94,12 @@ ActiveRecord::Schema.define(version: 2020_01_20_121539) do
     t.string "license5"
     t.text "free_message", null: false
     t.text "motivation", null: false
-    t.string "password_digest"
     t.string "image"
     t.integer "user_id"
+    t.bigint "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_resumes_on_group_id"
     t.index ["user_id"], name: "index_resumes_on_user_id"
   end
 
@@ -101,5 +117,8 @@ ActiveRecord::Schema.define(version: 2020_01_20_121539) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "group_users", "groups"
+  add_foreign_key "group_users", "users"
+  add_foreign_key "resumes", "groups"
   add_foreign_key "resumes", "users"
 end

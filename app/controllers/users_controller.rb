@@ -17,12 +17,14 @@ class UsersController < ApplicationController
   end
 
   def search
-    # return nil if params[:keyword] == ""
-    # @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"] ).where.not(id: current_user.id).limit(10)
-    # respond_to do |format|
-    #   format.html
-    #   format.json
-    # end
+    return nil if params[:keyword] == ""
+    @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"] ).where.not(id: current_user.id).limit(10)
+    respond_to do |format|
+      format.html
+      format.json
+    end
+    @group = Group.new
+    @group.users << current_user
   end
   private
 

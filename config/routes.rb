@@ -9,7 +9,8 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-
+  resources :groups do
+  end
   resources :resume do 
     collection do
       get 'step1'
@@ -30,11 +31,6 @@ Rails.application.routes.draw do
       post 'step8' =>'resume#validation8'
       get 'step9'
       post 'step9' =>'resume#validation9'
-    end
-    
-    member do
-      get 'search'
-      put 'adduser'
     end
   end
 end

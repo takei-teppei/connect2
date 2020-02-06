@@ -3,5 +3,8 @@
     = link_to "完了",done_users_path,class:"side-bar__submit--link"
   .side-bar__edit
     = link_to "編集中",unedited_users_path,class:"side-bar__submit--link"
-  .side-bar__O_page
-    = link_to "改装中",search_users_path,class:"side-bar__submit--link"
+  .side-bar__user
+    = link_to new_group_path,class:"side-bar__submit--link" do
+      グループ作成
+  .side-bar__index
+    = link_to "グループ一覧",groups_path,class:"side-bar__submit--link"

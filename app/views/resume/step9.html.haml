@@ -20,10 +20,5 @@
           履歴書の名前
           %br
           = f.text_field :resume_name, placeholder: '検索時に使用する名前を入力', class: 'content_main9__form9--resume_name'
-          パスワード
-          %br
-          = f.password_field :password,placeholder: '検索時に使用するパスワードを入力',class:"content_main9__form9--password",id:"password"
-          %input#js-passcheck{type: "checkbox"}
-          %label{for: "js-passcheck"} パスワードを表示する
         .content_main9__fotter9
           = f.submit 'Finish', class: 'content_main9__fotter9--right9'

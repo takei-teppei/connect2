@@ -1,0 +1,25 @@
+.header
+  = render "/resume/header"
+
+.user_space
+  = render "/users/side_bar"
+  
+  = form_for @group,url: groups_path ,html:{class:"search"} do |f|
+    .search__title
+      履歴書を見て欲しいユーザーを検索する
+    .search__group
+      .search__group--title
+        グループ名
+      = f.text_field :name, class: 'search__group--form', placeholder: 'グループ名を入力してください'
+    .search__userform
+      .search__userform--name
+        検索したいユーザー名
+      %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
+      %input.search__userform--form{placeholder:"追加したいユーザー名を入力してください", type:"text"}/
+    #userspace
+
+    .search__member
+      .search__member--left
+        追加するユーザー
+      #add_userspace
+    = f.submit "登録",class:"search--submit"

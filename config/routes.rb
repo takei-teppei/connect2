@@ -9,7 +9,8 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-
+  resources :groups do
+  end
   resources :resume do 
     collection do
       get 'step1'

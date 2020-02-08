@@ -1,11 +1,14 @@
 @mixin content_top{
-  color: black;
+  font-size: 20px;
+  color: #7e6446;
   background: wheat;
   text-decoration: none;
-  border:1px solid black;
+  text-align: center;
+  border:0.5px solid rgb(148, 109, 58);
   border-radius:5px;
   padding:5px 6px;
   margin-right:20px;
+  margin-bottom: 15px;
 }
 
 @mixin form{

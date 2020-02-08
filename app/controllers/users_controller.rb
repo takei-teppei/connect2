@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def unedited
-    @resumes = current_user.resumes.includes(:user)
+    @resumes = Resume.where(company_id: "[\"#{current_user.id}\"]")
   end
 
   def search
@@ -23,6 +23,8 @@ class UsersController < ApplicationController
       format.html
       format.json
     end
+    @group = Group.new
+    @group.users << current_user
   end
   private
 

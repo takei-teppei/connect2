@@ -6,12 +6,32 @@
   text-align: right;
   &__right{
     padding:4px 45px 4px 0px;
+    &--user{
+    }
   }
 }
 
 .resume{
   display: flex;
   justify-content: space-around;
+}
+
+.resume__ban{
+  height: calc(100vh - 100px);
+  background-image: image-url("p0469_m.jpeg");
+  font-size: 30px;
+  text-align: center;
+  padding-top: 20%;
+  &--title{
+    margin-bottom: 10px;
+  }
+  &--back{
+    text-decoration: none;
+    &:hover{
+      opacity: 50%;
+      border-bottom: 1px solid blue;
+    }
+  }
 }
 
 .content_left{

@@ -1,5 +1,4 @@
 class Resume < ApplicationRecord
-  has_secure_password
   belongs_to :user
   mount_uploader :image, ImageUploader
 

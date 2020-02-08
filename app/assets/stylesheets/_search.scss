@@ -2,9 +2,9 @@
   border :1px solid gray;
   border-radius: 1%;
   width: calc(100vw - 40%);
-  height:calc(100vh - 30vh) ;
+  height:calc(100vh - 20vh) ;
   background-color: white;
-  margin: 100px 100px 50px 0px;
+  margin: 30px 100px 50px 0px;
   &__title{
     font-size: 20px;
     font-weight: 600;
@@ -12,6 +12,27 @@
     text-align: center;
     padding: 25px;
     border-bottom: 1px gray solid;
+  }
+  &__group{
+    display: table;
+    padding: 40px;
+    &--title{
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 16px;
+      font-weight: 600;
+      padding-right: 150px;
+    }
+    &--form{
+      height: 50px;
+      width: 500px;
+      border-radius: 3px;
+      border: solid 1px gray;
+      &:focus{
+        border: solid 1px #0299e8;
+        outline: 0;
+      }
+    }
   }
   &__userform{
     display: table;
@@ -60,6 +81,7 @@
       width: calc(100vw - 65vw);
       display: flex;
       padding-bottom: 5px;
+      margin-bottom: 10px;
       justify-content: space-between;
       border-bottom:1px solid gray;
     }
@@ -68,11 +90,122 @@
       cursor: pointer;
     }
   }
+
   &--submit{
     color: white;
+    cursor: pointer;
     background-color: #0aa7fb;
     border-radius: 5px;
     padding: 10px 30px;
-    margin: 100px 45% 0px;
+    margin: 30px 45% 0px;
+    &:hover{
+      opacity: 70%;
+    }
+  }
+}
+
+.search2{
+  border :1px solid gray;
+  border-radius: 1%;
+  width: calc(100vw - 40%);
+  height:calc(100vh - 20vh) ;
+  background-color: white;
+  margin: 30px 100px 50px 0px;
+  &__title{
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+    padding: 25px;
+    border-bottom: 1px gray solid;
+  }
+  &__group{
+    display: table;
+    padding: 40px;
+    &--title{
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 16px;
+      font-weight: 600;
+      padding-right: 150px;
+    }
+    &--form{
+      height: 50px;
+      width: 500px;
+      border-radius: 3px;
+      border: solid 1px gray;
+      &:focus{
+        border: solid 1px #0299e8;
+        outline: 0;
+      }
+    }
+  }
+  &__userform{
+    display: table;
+    padding: 40px;
+    &--name{
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 16px;
+      font-weight: 600;
+      padding-right: 70px;
+    }
+    &--form{
+      height: 50px;
+      width: 500px;
+      border-radius: 3px;
+      border: solid 1px gray;
+      &:focus{
+        border: solid 1px #0299e8;
+        outline: 0;
+      }
+    }
+  }
+  &__userspace{
+    width: calc(100vw - 65vw);
+    display: flex;
+    padding-bottom: 5px;
+    margin-left: 31%;
+    justify-content: space-between;
+    border-bottom:1px solid gray;
+    &--addbtn{
+      color: #0299e8;
+      cursor: pointer;
+    }
+  }
+  &__member{
+    display: table;
+    padding: 40px;
+    &--left{
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 16px;
+      font-weight: 600;
+      padding-right: 100px;
+    }
+    &--right{
+      width: calc(100vw - 65vw);
+      display: flex;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      justify-content: space-between;
+      border-bottom:1px solid gray;
+    }
+    &--deletebtn{
+      color: red;
+      cursor: pointer;
+    }
+  }
+
+  &--submit{
+    color: white;
+    cursor: pointer;
+    background-color: #0aa7fb;
+    border-radius: 5px;
+    padding: 10px 30px;
+    margin: 30px 45% 0px;
+    &:hover{
+      opacity: 70%;
+    }
   }
 }

@@ -1,14 +1,14 @@
 class ResumeController < ApplicationController
   before_action :move_to_index, except: [:index]
-  before_action :redirect_to_step1, except: [:index,:destroy,:step1,:validation,:show]
-  before_action :redirect_to_step2, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:show]
-  before_action :redirect_to_step3, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:show]
-  before_action :redirect_to_step4, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:show]
-  before_action :redirect_to_step5, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:show]
-  before_action :redirect_to_step6, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:show]
-  before_action :redirect_to_step7, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:show]
-  before_action :redirect_to_step8, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:step8,:validation8,:show]
-  before_action :redirect_to_step9, except: [:index,:destroy,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:step8,:validation8,:step9,:validation9,:show]
+  before_action :redirect_to_step1, except: [:index,:destroy,:edit,:update,:search,:step1,:validation,:show]
+  before_action :redirect_to_step2, except: [:index,:destroy,:edit,:update,:search,:step1,:validation,:step2,:validation2,:show]
+  before_action :redirect_to_step3, except: [:index,:destroy,:edit,:update,:search,:step1,:validation,:step2,:validation2,:step3,:validation3,:show]
+  before_action :redirect_to_step4, except: [:index,:destroy,:edit,:update,:search,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:show]
+  before_action :redirect_to_step5, except: [:index,:destroy,:edit,:update,:search,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:show]
+  before_action :redirect_to_step6, except: [:index,:destroy,:edit,:update,:search,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:show]
+  before_action :redirect_to_step7, except: [:index,:destroy,:edit,:update,:search,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:show]
+  before_action :redirect_to_step8, except: [:index,:destroy,:edit,:update,:search,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:step8,:validation8,:show]
+  before_action :redirect_to_step9, except: [:index,:destroy,:edit,:update,:search,:step1,:validation,:step2,:validation2,:step3,:validation3,:step4,:validation4,:step5,:validation5,:step6,:validation6,:step7,:validation7,:step8,:validation8,:step9,:validation9,:show]
 
   def index
   end
@@ -89,7 +89,6 @@ class ResumeController < ApplicationController
       free_message:"kari", 
       submit_date:"kari",
       resume_name:"kari",
-      password:"kari",
       user_id:current_user.id
     )
     check_resume_valid = @resume.valid?
@@ -177,7 +176,6 @@ class ResumeController < ApplicationController
       free_message:"kari", 
       submit_date:"kari",
       resume_name:"kari",
-      password:"kari",
       user_id:current_user.id
     )
     check_resume_valid = @resume.valid?
@@ -264,7 +262,6 @@ class ResumeController < ApplicationController
       free_message:"kari", 
       submit_date:"kari",
       resume_name:"kari",
-      password:"kari",
       user_id:current_user.id
     )
     check_resume_valid = @resume.valid?
@@ -366,7 +363,6 @@ class ResumeController < ApplicationController
       free_message:"kari", 
       submit_date:"kari",
       resume_name:"kari",
-      password:"kari",
       user_id:current_user.id
     )
     check_resume_valid = @resume.valid?
@@ -468,7 +464,6 @@ class ResumeController < ApplicationController
       free_message:"kari", 
       submit_date:"kari",
       resume_name:"kari",
-      password:"kari",
       user_id:current_user.id
     )
     check_resume_valid = @resume.valid?
@@ -567,7 +562,6 @@ class ResumeController < ApplicationController
       free_message:"kari", 
       submit_date:"kari",
       resume_name:"kari",
-      password:"kari",
       user_id:current_user.id
     )
     check_resume_valid = @resume.valid?
@@ -652,7 +646,6 @@ class ResumeController < ApplicationController
       free_message:"kari", 
       submit_date:"kari",
       resume_name:"kari",
-      password:"kari",
       user_id:current_user.id
     )
     check_resume_valid = @resume.valid?
@@ -737,7 +730,6 @@ class ResumeController < ApplicationController
       free_message:session[:free_message], 
       submit_date:"kari",
       resume_name:"kari",
-      password:"kari",
       user_id:current_user.id
     )
     check_resume_valid = @resume.valid?
@@ -756,7 +748,6 @@ class ResumeController < ApplicationController
   def validation9
     session[:submit_date] = resume_params[:submit_date]
     session[:resume_name] = resume_params[:resume_name]
-    session[:password] = resume_params[:password]
     session[:id] = current_user.id
     @resume = Resume.new(
       fullname: session[:fullname],
@@ -825,7 +816,6 @@ class ResumeController < ApplicationController
       free_message:session[:free_message], 
       submit_date:session[:submit_date],
       resume_name:session[:resume_name],
-      password:session[:password],
       user_id:session[:id]
     )
     @resume.save
@@ -849,9 +839,14 @@ class ResumeController < ApplicationController
     @resume = Resume.find(params[:id])
   end
 
+  def edit
+    @resume = Resume.find(params[:id])
+    @resume.user
+  end
+
   def update
     @resume = Resume.find(params[:id])
-    if @resume.update(resume_image_params)
+    if @resume.update(resume_update)
       redirect_to done_users_path
     else
       render :show
@@ -871,7 +866,9 @@ class ResumeController < ApplicationController
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
-
+  def resume_update
+    params.require(:resume).permit(:resume_name,company_id:[])
+  end
   def resume_params
     params.require(:resume).permit(
       :fullname,
@@ -940,7 +937,6 @@ class ResumeController < ApplicationController
       :motivation,
       :submit_date,
       :resume_name,
-      :password
     ).merge(user_id: current_user.id)
   end
 
@@ -1012,7 +1008,6 @@ class ResumeController < ApplicationController
       :motivation,
       :submit_date,
       :resume_name,
-      :password,
       :image
     ).merge(user_id: current_user.id)
   end

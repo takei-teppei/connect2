@@ -1,16 +1,16 @@
 .user_space{
   background-image:image-url("p0469_m.jpeg");
-  display: flex;
   height: 100vh;
+  display: flex;
 }
 
 .side-bar{
   background-color: white;
-  height: 140px;
+  height: 24%;
   border:1px solid gray;
   border-radius: 1%;
   text-align: center;
-  margin: 100px 100px  100px 200px;
+  margin: 30px 100px  100px 200px;
   &__submit{
     @include side_btn;
     width: 150px;
@@ -21,26 +21,24 @@
       color: black;
     }
   }
-  &__edit{
+  &__user{
     @include side_btn;
     padding: 10px;
-    border-bottom: 1px solid gray;
-    &--link3{
-      text-decoration: none;
-      color: black;
-    }
   }
-  &__O_page{
+  &__index{
     @include side_btn;
+    border-bottom: 1px solid gray;
     padding: 10px;
   }
 }
 
 .user_mypage{
   width: calc(100vw - 45%);
+  height: 70%;
   background-color: white;
   border: 1px solid black;
-  margin: 100px 30px;
+  border-radius: 5px;
+  margin: 30px;
   overflow: scroll;
   &__title{
     font-size: 18px;

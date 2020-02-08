@@ -67,9 +67,9 @@ class CreateResumes < ActiveRecord::Migration[5.0]
       t.string  :license5
       t.text    :free_message,null: false
       t.text    :motivation,null: false
-      t.string :password_digest
       t.string :image
-      t.references :user, foreign_key: true
+      t.references :user, foreign_key: true, type: :integer
+      t.string :company_id
       t.timestamps
     end
   end

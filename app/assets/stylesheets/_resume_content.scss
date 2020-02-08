@@ -1,9 +1,9 @@
 .content_top{
-  display: flex;
   padding:30px 150px;
   list-style:none;
-  margin:0 130px;
-  padding-right:0;
+  margin:0px;
+  margin-right: -200px;
+  padding-right:100px;
   &__profile{
     @include content_top;
   }

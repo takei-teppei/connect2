@@ -1,11 +1,11 @@
 $(function(){
   function addUser(user){
     var html =`
-              <div class="search__userspace">
-                <div class="search__userspace--addname">
+              <div class="search2__userspace">
+                <div class="search2__userspace--addname">
                   ${user.name}
                 </div>
-                <div class="search__userspace--addbtn" data-user-id="${user.id}" data-user-name="${user.name}">
+                <div class="search2__userspace--addbtn" data-user-id="${user.id}" data-user-name="${user.name}">
                   追加
                 </div>
               </div>
@@ -15,8 +15,8 @@ $(function(){
 
   function addnoUser(){
     var html =`
-              <div class="search__userspace">
-                <div class="search__userspace--noname">
+              <div class="search2__userspace">
+                <div class="search2__userspace--noname">
                   ユーザー名が見つかりません
                 </div>
               </div>
@@ -26,11 +26,11 @@ $(function(){
 
   function deleteUser(name,id){
     var html =`
-              <div class="search__member--right" id = "${id}">
-                <div class="search__member--addname">
+              <div class="search2__member--right" id = "${id}">
+                <div class="search2__member--addname">
                   ${name}
                 </div>
-                <div class="search__member--deletebtn" data-user-id="${id}" data-user-name="${name}">
+                <div class="search2__member--deletebtn" data-user-id="${id}" data-user-name="${name}">
                   削除
                 </div>
               </div>
@@ -39,11 +39,11 @@ $(function(){
   }
 
   function addMember(userid) {
-    let html = `<input value="${userid}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userid}" />`;
+    let html = `<input value="${userid}" name="resume[company_id][]" type="hidden" id="resume_user_id_${userid}" />`;
     $(`#${userid}`).append(html);
   }
 
-  $(document).on("keyup",".search__userform--form", function(){
+  $(document).on("keyup",".search2__userform--form", function(){
     var input = $(this).val();
     $.ajax({
       type: "GET",
@@ -71,7 +71,7 @@ $(function(){
     });
   })
 
-  $(document).on("click",".search__userspace--addbtn",function(){
+  $(document).on("click",".search2__userspace--addbtn",function(){
     const username = $(this).attr("data-user-name"); //data-user-nameの値をそのまま引き継げる。
     const userid = $(this).attr("data-user-id");     //上記と同様。
     $(this).parent().remove();
@@ -80,7 +80,7 @@ $(function(){
     addMember(userid);
   });
 
-  $(document).on("click",".search__member--deletebtn",function(){
+  $(document).on("click",".search2__member--deletebtn",function(){
     $(this).parent().remove();
   });
 });

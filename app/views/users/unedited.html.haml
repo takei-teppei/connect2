@@ -6,7 +6,7 @@
   
   .user_mypage
     .user_mypage__title
-      履歴書一覧
+      許可された履歴書
     .user_mypage__middle
       = link_to "履歴書一覧",done_users_path,class:"user_mypage__middle--gray"
       = link_to "許可された履歴書",unedited_users_path,class:"user_mypage__middle--white"
@@ -22,5 +22,3 @@
               履歴書：
               = resume.resume_name
               %br
-              作成日:
-              = resume.created_at.strftime("%Y年%m月%d日")

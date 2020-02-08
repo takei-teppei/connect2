@@ -1,5 +1,5 @@
 class Resume < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   mount_uploader :image, ImageUploader
 
   validates :fullname,               presence: true, length: {maximum: 10}

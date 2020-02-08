@@ -69,7 +69,7 @@ class CreateResumes < ActiveRecord::Migration[5.0]
       t.text    :motivation,null: false
       t.string :image
       t.references :user, foreign_key: true, type: :integer
-      t.references :group, foreign_key: true
+      t.string :company_id
       t.timestamps
     end
   end

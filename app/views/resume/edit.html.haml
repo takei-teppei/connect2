@@ -1,3 +1,21 @@
-= form_for @resume,url: resume_path(@resume) do |f|
-  = f.text_field :resume_name
-  = f.submit "更新する"
+.header
+  = render "/resume/header"
+
+.user_space
+  = render "/users/side_bar"
+  
+  = form_for @resume,url: resume_path(@resume),html:{class:"search2"} do |f|
+    .search2__title
+      履歴書を見せるユーザーを検索する
+    = f.text_field :resume_name,type:"hidden", class: 'search2__group--form', placeholder: '履歴書名を入力してください'
+    .search2__userform
+      .search2__userform--name
+        検索したいユーザー名
+      %input.search2__userform--form{placeholder:"追加したいユーザー名を入力してください", type:"text"}/
+    #userspace
+
+    .search2__member
+      .search2__member--left
+        追加するユーザー
+      #add_userspace
+    = f.submit "登録",class:"search--submit"

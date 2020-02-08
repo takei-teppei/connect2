@@ -22,15 +22,25 @@ class GroupsController < ApplicationController
   end
 
   def update
-    @resume = Resume.find(params[:id])
+    @group.resume.update(resume_update)
   end
+
+  def destroy
+    @group = Group.find(params[:id])
+    if @group.destroy
+      redirect_to groups_path
+    else
+      redirect_to groups_path
+    end
+  end
+
   private
 
   def group_params
-    params.require(:group).permit(:name, user_ids: [] )
+    params.require(:group).permit(:name, user_ids: []) #resumeカラムに、見せたいユーザーのidを入れる。
   end
   
   def resume_update
-    params.require(:resume).permit(:resume_name).merge(gorup_id: current_user.group.id)
+    params.require(:resume).permit(:name).merge(gorup_id: current_user.group.id)
   end
 end

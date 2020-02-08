@@ -841,11 +841,12 @@ class ResumeController < ApplicationController
 
   def edit
     @resume = Resume.find(params[:id])
+    @resume.user
   end
 
   def update
     @resume = Resume.find(params[:id])
-    if @resume.update(resume_image_params)
+    if @resume.update(resume_update)
       redirect_to done_users_path
     else
       render :show
@@ -865,7 +866,9 @@ class ResumeController < ApplicationController
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
-
+  def resume_update
+    params.require(:resume).permit(:resume_name,company_id:[])
+  end
   def resume_params
     params.require(:resume).permit(
       :fullname,
@@ -1005,14 +1008,10 @@ class ResumeController < ApplicationController
       :motivation,
       :submit_date,
       :resume_name,
-      :image,
-      group_id: current_user.group.id
+      :image
     ).merge(user_id: current_user.id)
   end
 
-  def resunme_update
-    params.require(:resume).permit(:resume_name).merge(group_id: current_user.group.id)
-  end
   def redirect_to_step1
     redirect_to step1_resume_index_path unless session[:through_first_valid].present? && session[:through_first_valid] == "through_first_valid"
   end

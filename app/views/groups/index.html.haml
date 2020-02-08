@@ -8,8 +8,9 @@
     .user_mypage__title
       グループ一覧
     .user_mypage__middle
-      = link_to "完了",done_users_path,class:"user_mypage__middle--white"
-      = link_to "編集中",unedited_users_path,class:"user_mypage__middle--gray"
+      = link_to "履歴書一覧",done_users_path,class:"user_mypage__middle--gray"
+      = link_to "許可された履歴書",unedited_users_path,class:"user_mypage__middle--gray"
+      = link_to "グループ一覧",groups_path,class:"user_mypage__middle--white"
     .user_mypage__bottom
       - @groups.each do |group|
         .user_mypage__bottom__resume
@@ -19,4 +20,4 @@
               %br
               作成日:
               = group.created_at.strftime("%Y年%m月%d日")
-          -# = link_to "削除" ,resume_path(resume),method: :delete,class:"user_mypage__bottom__resume__left--delete"
+          = link_to "削除" ,group_path(group),method: :delete,class:"user_mypage__bottom__resume__left--delete"

@@ -21,22 +21,13 @@
       color: black;
     }
   }
-  &__edit{
-    @include side_btn;
-    border-bottom: 1px solid gray;
-    padding: 10px;
-    &--link3{
-      text-decoration: none;
-      color: black;
-    }
-  }
   &__user{
     @include side_btn;
     padding: 10px;
-    border-bottom: 1px solid gray;
   }
   &__index{
     @include side_btn;
+    border-bottom: 1px solid gray;
     padding: 10px;
   }
 }

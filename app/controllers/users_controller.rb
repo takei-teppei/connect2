@@ -13,7 +13,8 @@ class UsersController < ApplicationController
   end
 
   def unedited
-    @resumes = current_user.resumes.includes(:user)
+    @resumes = Resume.where(companny_id: "#{current_user.id}")
+    binding.pry
   end
 
   def search

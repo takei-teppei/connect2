@@ -846,7 +846,7 @@ class ResumeController < ApplicationController
 
   def update
     @resume = Resume.find(params[:id])
-    if @resume.update(resume_update)
+    if @resume.update(resume_image_params)
       redirect_to done_users_path
     else
       render :show
@@ -1008,7 +1008,8 @@ class ResumeController < ApplicationController
       :motivation,
       :submit_date,
       :resume_name,
-      :image
+      :image,
+      company_id:[]
     ).merge(user_id: current_user.id)
   end
 

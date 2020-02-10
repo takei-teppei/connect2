@@ -8,7 +8,6 @@
       = render "devise/shared/error_messages", resource: resource
       .new__registration--name
         = f.label :name 
-        %em(6 characters maximum)
         %br
         = f.text_field :name, autofocus: true, maxlength: "6",class: "new__registration--name--size"
       .new__registration--email
@@ -19,7 +18,6 @@
         = f.label :password
         - if @minimum_password_length
           %em
-            (#{@minimum_password_length} characters minimum)
         %br/
         = f.password_field :password, autocomplete: "new-password",class: "new__registration--password--size"
       .new__registration--password_confirmation

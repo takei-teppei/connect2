@@ -11,45 +11,45 @@
       .content_main__head--description
         中学・高校・大学の学歴を入力します。
         
-    .content_main__form
-      = form_for @resume, url: {controller: 'resume', action: 'validation4' }, html: {class: 'content_main__form--box'} do |f|
-        .content_main__form--education_j
+    .content_main__form4
+      = form_for @resume, url: {controller: 'resume', action: 'validation4' }, html: {class: 'content_main__form4--box'} do |f|
+        .content_main__form4--education_j
           中学(入学)
           %br
-          = f.text_field :e_y, placeholder: '2000', class: 'content_main__form--education'
-          = f.text_field :e_m, placeholder: '11', class: 'content_main__form--education'
-          = f.text_field :education_j, placeholder: '例) ○○中学入学と入力', class: 'content_main__form--education_j'
+          = f.text_field :e_y, placeholder: '2000', class: 'content_main__form4--education'
+          = f.text_field :e_m, placeholder: '11', class: 'content_main__form4--education'
+          = f.text_field :education_j, placeholder: '例) ○○中学入学と入力', class: 'content_main__form4--education_j'
           %br
           中学(卒業)
           %br
-          = f.text_field :e_y2, placeholder: '2000', class: 'content_main__form--education'
-          = f.text_field :e_m2, placeholder: '11', class: 'content_main__form--education'
-          = f.text_field :education2_j, placeholder: '例) ○○中学卒業と入力', class: 'content_main__form--education_j'
-        .content_main__form--education_h
+          = f.text_field :e_y2, placeholder: '2000', class: 'content_main__form4--education'
+          = f.text_field :e_m2, placeholder: '11', class: 'content_main__form4--education'
+          = f.text_field :education2_j, placeholder: '例) ○○中学卒業と入力', class: 'content_main__form4--education_j'
+        .content_main__form4--education_h
           %br
           高校(入学)
           %br
-          = f.text_field :e_y3, placeholder: '2000', class: 'content_main__form--education'
-          = f.text_field :e_m3, placeholder: '11', class: 'content_main__form--education'
-          = f.text_field :education3_h, placeholder: '例) ○○高校入学と入力', class: 'content_main__form--education_h'
+          = f.text_field :e_y3, placeholder: '2000', class: 'content_main__form4--education'
+          = f.text_field :e_m3, placeholder: '11', class: 'content_main__form4--education'
+          = f.text_field :education3_h, placeholder: '例) ○○高校入学と入力', class: 'content_main__form4--education_h'
           %br
           高校(卒業)
           %br
-          = f.text_field :e_y4, placeholder: '2000', class: 'content_main__form--education'
-          = f.text_field :e_m4, placeholder: '11', class: 'content_main__form--education'
-          = f.text_field :education4_h, placeholder: '例) ○○高校卒業と入力', class: 'content_main__form--education_h'
-        .content_main__form--education_c
+          = f.text_field :e_y4, placeholder: '2000', class: 'content_main__form4--education'
+          = f.text_field :e_m4, placeholder: '11', class: 'content_main__form4--education'
+          = f.text_field :education4_h, placeholder: '例) ○○高校卒業と入力', class: 'content_main__form4--education_h'
+        .content_main__form4--education_c
           %br
           大学(入学)
           %br
-          = f.text_field :e_y5, placeholder: '2000', class: 'content_main__form--education'
-          = f.text_field :e_m5, placeholder: '11', class: 'content_main__form--education'
-          = f.text_field :education5_c, placeholder: '例) ○○大学入学と入力', class: 'content_main__form--education_c'
+          = f.text_field :e_y5, placeholder: '2000', class: 'content_main__form4--education'
+          = f.text_field :e_m5, placeholder: '11', class: 'content_main__form4--education'
+          = f.text_field :education5_c, placeholder: '例) ○○大学入学と入力', class: 'content_main__form4--education_c'
           %br
           大学(卒業)
           %br
-          = f.text_field :e_y6, placeholder: '2000', class: 'content_main__form--education'
-          = f.text_field :e_m6, placeholder: '11', class: 'content_main__form--education'
-          = f.text_field :education6_c, placeholder: '例) ○○大学卒業と入力', class: 'content_main__form--education_c'
+          = f.text_field :e_y6, placeholder: '2000', class: 'content_main__form4--education'
+          = f.text_field :e_m6, placeholder: '11', class: 'content_main__form4--education'
+          = f.text_field :education6_c, placeholder: '例) ○○大学卒業と入力', class: 'content_main__form4--education_c'
         .content_main__fotter4
           = f.submit 'Next', class: 'content_main__fotter--right'

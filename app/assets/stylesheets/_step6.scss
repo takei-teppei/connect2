@@ -1,16 +1,66 @@
+@media screen and (max-width:639px) {
+  /*スマホ用のcssを記述*/
+  .content{
+    width:100vw;
+    height:100vh;
+    background-image:image-url("p0469_m.jpeg");
+  }
+  
+  .content_main6{
+    background-color: white;
+    border: whitesmoke solid 1px;
+    display: block;
+    position: relative;
+    &__head6{
+      font-size:15px;
+      padding:10px 20px;
+      border-bottom: solid 1px gray;
+    }
+    &__form6{
+      height:400px;
+      padding:20px;
+      font-size:15px;
+      &--date{
+        @include form_date;
+      }
+      &--license{
+        @include form_main2;
+      }
+    }
+    &__fotter6{
+      position: absolute;
+      bottom:0px;
+      right:0px;
+      &--right6{
+        color: wheat;
+        background-color:rgb(69, 107, 54);
+        font-size:30px;
+        float:right;
+        text-decoration:none;
+        padding:5px 20px;
+        margin:20px;
+        border-radius:10px;
+        cursor: pointer;
+      }
+      &:hover{
+        opacity:50%;
+      }
+    }
+  }
+}
+     
+@media only screen and (min-width:640px) and (max-width:1023px) {
+/*tablet用のcssを記述*/
 .content{
   width:100vw;
   height:100vh;
-  background-color: beige;
+  background-image:image-url("p0469_m.jpeg");
 }
 
 .content_main6{
-  width:calc(100vw - 700px);
-  height:calc(100vh - 150px);
   background-color: white;
   border: whitesmoke solid 1px;
   display: block;
-  margin:10px auto 100px auto;
   position: relative;
   &__head6{
     font-size:15px;
@@ -18,14 +68,14 @@
     border-bottom: solid 1px gray;
   }
   &__form6{
-    height:350px;
+    height:400px;
     padding:20px;
     font-size:15px;
     &--date{
       @include form_date;
     }
     &--license{
-      @include form_main;
+      @include form_main2;
     }
   }
   &__fotter6{
@@ -45,6 +95,61 @@
     }
     &:hover{
       opacity:50%;
+    }
+  }
+}
+}
+    
+@media screen and (min-width:1024px) {
+  /*pc用のcssを記述*/
+  .content{
+    width:100vw;
+    height:100vh;
+    background-color: beige;
+  }
+  
+  .content_main6{
+    width:calc(100vw - 700px);
+    height:calc(100vh - 150px);
+    background-color: white;
+    border: whitesmoke solid 1px;
+    display: block;
+    margin:10px auto 100px auto;
+    position: relative;
+    &__head6{
+      font-size:15px;
+      padding:10px 20px;
+      border-bottom: solid 1px gray;
+    }
+    &__form6{
+      height:350px;
+      padding:20px;
+      font-size:15px;
+      &--date{
+        @include form_date;
+      }
+      &--license{
+        @include form_main;
+      }
+    }
+    &__fotter6{
+      position: absolute;
+      bottom:0px;
+      right:0px;
+      &--right6{
+        color: wheat;
+        background-color:rgb(69, 107, 54);
+        font-size:30px;
+        float:right;
+        text-decoration:none;
+        padding:5px 20px;
+        margin:20px;
+        border-radius:10px;
+        cursor: pointer;
+      }
+      &:hover{
+        opacity:50%;
+      }
     }
   }
 }

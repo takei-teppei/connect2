@@ -1,24 +1,82 @@
+@media screen and (max-width:639px) {
+  /*スマホ用のcssを記述*/
+  .content{
+    width:100vw;
+    height:100vh;
+    background-image:image-url("p0469_m.jpeg");
+  }
+  
+  .content_main{
+    background-color: white;
+    border: whitesmoke solid 1px;
+    display: block;
+    position: relative;
+    &__head{
+      font-size:15px;
+      padding:10px 20px;
+      border-bottom: solid 1px gray;
+    }
+    &__form4{
+      height:450px;
+      padding:20px;
+      font-size:15px;
+      display: flex;
+      &--education{
+        @include form_date;
+      }
+      &--education_j{
+        @include form_main2;
+      }
+      &--education_h{
+        @include form_main2;
+      }
+      &--education_c{
+        @include form_main2;
+      }
+    }
+    &__fotter4{
+      position: absolute;
+      bottom:-10px;
+      right:10px;
+      &--right4{
+        color: wheat;
+        background-color:rgb(69, 107, 54);
+        font-size:20px;
+        float:right;
+        text-decoration:none;
+        padding:5px 20px;
+        margin:20px;
+        border-radius:10px;
+        cursor: pointer;
+      }
+      &:hover{
+        opacity:50%;
+        display: hide;
+      }
+    }
+  }
+}
+     
+@media only screen and (min-width:640px) and (max-width:1023px) {
+/*tablet用のcssを記述*/
 .content{
   width:100vw;
   height:100vh;
-  background-color: beige;
+  background-image:image-url("p0469_m.jpeg");
 }
 
 .content_main{
-  width:calc(100vw - 700px);
-  height:calc(100vh - 200px);
   background-color: white;
   border: whitesmoke solid 1px;
   display: block;
-  margin:10px auto 100px auto;
   position: relative;
   &__head{
     font-size:15px;
     padding:10px 20px;
     border-bottom: solid 1px gray;
   }
-  &__form{
-    height:350px;
+  &__form4{
+    height:450px;
     padding:20px;
     font-size:15px;
     display: flex;
@@ -26,13 +84,13 @@
       @include form_date;
     }
     &--education_j{
-      @include form_main;
+      @include form_main2;
     }
     &--education_h{
-      @include form_main;
+      @include form_main2;
     }
     &--education_c{
-      @include form_main;
+      @include form_main2;
     }
   }
   &__fotter4{
@@ -53,6 +111,69 @@
     &:hover{
       opacity:50%;
       display: hide;
+    }
+  }
+}
+}
+    
+@media screen and (min-width:1024px) {
+  /*pc用のcssを記述*/
+  .content{
+    width:100vw;
+    height:100vh;
+    background-color: beige;
+  }
+  
+  .content_main{
+    width:calc(100vw - 700px);
+    height:calc(100vh - 200px);
+    background-color: white;
+    border: whitesmoke solid 1px;
+    display: block;
+    margin:10px auto 100px auto;
+    position: relative;
+    &__head{
+      font-size:15px;
+      padding:10px 20px;
+      border-bottom: solid 1px gray;
+    }
+    &__form4{
+      height:350px;
+      padding:20px;
+      font-size:15px;
+      display: flex;
+      &--education{
+        @include form_date;
+      }
+      &--education_j{
+        @include form_main;
+      }
+      &--education_h{
+        @include form_main;
+      }
+      &--education_c{
+        @include form_main;
+      }
+    }
+    &__fotter4{
+      position: absolute;
+      bottom:-10px;
+      right:10px;
+      &--right4{
+        color: wheat;
+        background-color:rgb(69, 107, 54);
+        font-size:20px;
+        float:right;
+        text-decoration:none;
+        padding:5px 20px;
+        margin:20px;
+        border-radius:10px;
+        cursor: pointer;
+      }
+      &:hover{
+        opacity:50%;
+        display: hide;
+      }
     }
   }
 }

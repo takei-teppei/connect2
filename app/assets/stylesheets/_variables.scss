@@ -31,6 +31,13 @@
   margin-bottom:5px;
 }
 
+@mixin form_main2{
+  width:65%;
+  display:inline;
+  padding:5px 0px 5px 3px;
+  margin-bottom:5px;
+}
+
 @mixin top_y{
   width:15%;
   padding:10px 30px;

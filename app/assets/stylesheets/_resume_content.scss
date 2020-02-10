@@ -1,37 +1,124 @@
-.content_top{
-  padding:30px 150px;
-  list-style:none;
-  margin:0px;
-  margin-right: -200px;
-  padding-right:100px;
-  &__profile{
-    @include content_top;
+@media screen and (max-width:639px) {
+  /*スマホ用のcssを記述*/
+  .content_top{
+    padding:30px 150px;
+    list-style:none;
+    margin:0px;
+    margin-right: -200px;
+    padding-right:100px;
+    display: none;
+    &__profile{
+      @include content_top;
+    }
+    &__sa{
+      @include content_top;
+    }
+    &__ci{
+      @include content_top;
+    }
+    &__e{
+      @include content_top;
+    }
+    &__a{
+      @include content_top;
+    }
+    &__wh{
+      @include content_top
+    }
+    &__license{
+      @include content_top;
+    }
+    &__free{
+      @include content_top;
+    }
+    &__motivation{
+      @include content_top;
+    }
+    &__completion{
+      @include content_top;
+    }
   }
-  &__sa{
-    @include content_top;
   }
-  &__ci{
-    @include content_top;
-  }
-  &__e{
-    @include content_top;
-  }
-  &__a{
-    @include content_top;
-  }
-  &__wh{
-    @include content_top
-  }
-  &__license{
-    @include content_top;
-  }
-  &__free{
-    @include content_top;
-  }
-  &__motivation{
-    @include content_top;
-  }
-  &__completion{
-    @include content_top;
+     
+  @media only screen and (min-width:640px) and (max-width:1023px) {
+  /*tablet用のcssを記述*/
+  .content_top{
+    padding:30px 150px;
+    list-style:none;
+    margin:0px;
+    margin-right: -200px;
+    padding-right:100px;
+    display: none;
+    &__profile{
+      @include content_top;
+    }
+    &__sa{
+      @include content_top;
+    }
+    &__ci{
+      @include content_top;
+    }
+    &__e{
+      @include content_top;
+    }
+    &__a{
+      @include content_top;
+    }
+    &__wh{
+      @include content_top
+    }
+    &__license{
+      @include content_top;
+    }
+    &__free{
+      @include content_top;
+    }
+    &__motivation{
+      @include content_top;
+    }
+    &__completion{
+      @include content_top;
+    }
   }
 }
+    
+  @media screen and (min-width:1024px) {
+  /*pc用のcssを記述*/
+  .content_top{
+    padding:30px 150px;
+    list-style:none;
+    margin:0px;
+    margin-right: -200px;
+    padding-right:100px;
+    &__profile{
+      @include content_top;
+    }
+    &__sa{
+      @include content_top;
+    }
+    &__ci{
+      @include content_top;
+    }
+    &__e{
+      @include content_top;
+    }
+    &__a{
+      @include content_top;
+    }
+    &__wh{
+      @include content_top
+    }
+    &__license{
+      @include content_top;
+    }
+    &__free{
+      @include content_top;
+    }
+    &__motivation{
+      @include content_top;
+    }
+    &__completion{
+      @include content_top;
+    }
+  }
+  }

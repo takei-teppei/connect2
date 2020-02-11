@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     end
   end
   resources :groups do
+    resources :messages, only: [:index, :create]
+    namespace :api do
+      resources :messages, only: :index, defaults: { format: 'json' }
+    end
   end
   resources :resume do 
     collection do

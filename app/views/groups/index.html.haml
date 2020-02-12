@@ -15,7 +15,7 @@
       - @groups.each do |group|
         .user_mypage__bottom__resume
           .user_mypage__bottom__resume__left
-            = link_to group_path(group),class:"user_mypage__bottom__resume__left--name" do
+            = link_to group_messages_path(group),class:"user_mypage__bottom__resume__left--name" do
               = group.name
               %br
               作成日:

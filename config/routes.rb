@@ -9,7 +9,9 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  
   resources :groups do
+    resources :messages, only: [:index, :create]
   end
   resources :resume do 
     collection do

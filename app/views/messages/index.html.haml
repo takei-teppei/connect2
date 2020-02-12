@@ -1,0 +1,17 @@
+.group_header
+  .group_header__left
+    .group_header__left--username
+      = @group.name
+  
+  .group_header__right
+    = link_to "一覧ページへ",groups_path,class:"group_header__right--back"
+
+.main_space
+  
+
+= form_with model:[@group,@message],url: group_messages_path(@group),class:"form_space" do |f|
+  = f.text_area :text,class:"form_space__text",placeholder: 'メッセージを入力'
+  -# = f.label :image, class: 'form_space__btn' do
+  -#   %i.fa.fa-image
+  -#   = f.file_field :image,type:"hidden", class: 'form_space__btn--image'
+  = f.submit "送信",class:"form_space__submit"

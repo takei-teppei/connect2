@@ -1,0 +1,78 @@
+.group_header{
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  background-color: #3F475C;
+  display: flex;
+  justify-content: space-between;
+  &__left{
+    &--username{
+      color: white;
+      font-size: 20px;
+      margin-left: 30px;
+    }
+  }
+  &__right{
+    &--back{
+      text-decoration: none;
+      margin-right: 20px;
+      color: white;
+      &:hover{
+        opacity: 50%;
+        border-bottom: 1px solid blue;
+      }
+    }
+  }
+}
+
+.main_space{
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-color: #87A3C5;
+}
+
+.form_space{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  &__text{
+    width: 90%;
+    height: 40px;
+    font-size: 20px;
+    border: solid 1px #DFDFDF;
+    border-radius: 5px;
+    resize: none;
+    overflow: scroll;
+    padding: 5px;
+    margin-top: 5px;
+    margin-left: 30px;
+    &:focus{
+      border: solid 1px #0299e8;
+      outline: 0;
+    }
+  }
+  &__btn{
+    font-size: 20px;
+    position: absolute;
+    top: 15px;
+    right: 12%;
+    cursor: pointer;
+    &:hover{
+      opacity: 50%;
+    }
+  }
+  &__submit{
+    width: 9%;
+    color: white;
+    background-color: #5684E4;
+    opacity: 80%;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+    &:hover{
+      opacity: 50%;
+    }
+  }
+}

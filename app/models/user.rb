@@ -8,4 +8,5 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :resumes
   has_many :group_users, dependent: :destroy
   has_many :groups, through: :group_users, dependent: :destroy
+  has_many :messages
 end

@@ -7,7 +7,7 @@
       〜あなたと職場を繋ぐ〜
     = image_tag "IMG_1801.JPG",height:"400",width:"65%", class: 'choice__top--image'
     
-  .choice__introduction#sample
+  .choice__introduction
     .choice__introduction--title
       introduction
     .choice__introduction--description
@@ -17,18 +17,21 @@
       郵送などの手間が省けます。
 
   .choice__howto
-    .choice__howto--title#sample2
+    .choice__howto--title#sample
       How to?
-    .choice__howto--use#sample3
+    .choice__howto--use#sample2
       ログインor新規登録すると<br>
       Writeから履歴書が作れます。<br>
       履歴書をみたい場合はCheckをクリック！
       履歴書作成後は、履歴書ページから<br>
       履歴書を見せたいユーザー(企業)を選択！
   .choice__try
-    .choice__try--title#sample4
+    .choice__try--title#sample3
       Let's try!
   .choice__click
-    = link_to "Write",step1_resume_index_path,class:"choice__click--left"
-    = link_to "Check",done_users_path,class:"choice__click--right"
-
+    = link_to "Write",step1_resume_index_path,class:"choice__click--left",id:"sample4"
+    = link_to "Check",done_users_path,class:"choice__click--right",id:"sample5"
+  
+  .choice__footer
+    .choice__footer--logo
+      %i.fab.fa-twitter

@@ -1,22 +1,24 @@
 .group_header
   .group_header__left
-    .group_header__left--username
+    .group_header__left--groupname
       = @group.name
+    .group_header__left--username
+      (参加ユーザー：
+      - @group.users.each do|user|
+        = user[:name]
+      )
   
   .group_header__right
     = link_to "一覧ページへ",groups_path,class:"group_header__right--back"
 
 .main_space
-  .chat-message(id:){"data-id": @message.id}
-  .chat_contents__top
-    -# .chat_contents__top--username
-    -#   = @message.user.name
-    -# .chat_contents__top--datetimes
-    -#   = @message.created_at.strftime("%Y/%m/%d %H:%M")
-  .chat_contents__message
-    - if @message.text.present?
-      %p.lower-message__content
-        = @message.text
+  - @messages.each do |message|
+    .main_space__message
+      .main_space__message--name
+        = message.user.name
+      .main_space__message--text
+        = message.text
+        <br>
 
 = form_with model:[@group,@message],url: group_messages_path(@group),method: :post,class:"form_space",id:"new_message" do |f|
   = f.text_area :text,class:"form_space__text",placeholder: 'メッセージを入力'

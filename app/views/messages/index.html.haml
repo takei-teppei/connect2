@@ -13,12 +13,20 @@
 
 .main_space
   - @messages.each do |message|
-    .main_space__message
-      .main_space__message--name
-        = message.user.name
-      .main_space__message--text
-        = message.text
-        <br>
+    -if message.user.id == current_user.id
+      .main_space__message
+        .main_space__message--text
+          = message.text
+          <br>
+        .main_space__message--name
+          = message.user.name
+    -else 
+      .main_space__submessage
+        .main_space__submessage--name
+          = message.user.name
+        .main_space__submessage--text
+          = message.text
+          <br>
 
 = form_with model:[@group,@message],url: group_messages_path(@group),method: :post,class:"form_space",id:"new_message" do |f|
   = f.text_area :text,class:"form_space__text",placeholder: 'メッセージを入力'

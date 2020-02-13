@@ -38,17 +38,37 @@
   background-color: #87A3C5;
   overflow: scroll;
   &__message{
+    display: table;
+    margin: 10px 0 10px auto;
+    &--name{
+      font-size: 17px;
+      padding: 5px;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    &--text{
+      background-color: #68DC45;
+      border-radius: 10px;
+      padding: 5px;
+      margin-left: 5px;
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+  &__submessage{
     display: flex;
     margin: 10px;
     &--name{
       font-size: 17px;
       padding: 5px;
+      display: table;
     }
     &--text{
       background-color: white;
       border-radius: 10px;
       padding: 5px;
       margin-left: 5px;
+      display: table-cell;
     }
   }
 }

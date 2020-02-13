@@ -6,10 +6,17 @@
   display: flex;
   justify-content: space-between;
   &__left{
-    &--username{
+    display: flex;
+    &--groupname{
       color: white;
       font-size: 20px;
       margin-left: 30px;
+    }
+    &--username{
+      color: white;
+      font-size: 17px;
+      margin-top: 5px;
+      margin-left: 20px;
     }
   }
   &__right{
@@ -29,6 +36,21 @@
   width: 100%;
   height: calc(100vh - 100px);
   background-color: #87A3C5;
+  overflow: scroll;
+  &__message{
+    display: flex;
+    margin: 10px;
+    &--name{
+      font-size: 17px;
+      padding: 5px;
+    }
+    &--text{
+      background-color: white;
+      border-radius: 10px;
+      padding: 5px;
+      margin-left: 5px;
+    }
+  }
 }
 
 .form_space{

@@ -12,6 +12,8 @@ Ruby on Rails ~> 5.2.3
 # 使い方
 新規登録またはログイン後、履歴書を登録します。
 履歴書登録後に、作成した履歴書が閲覧することができます。
+履歴書を見せたいユーザーを選択します。
+その後、ユーザー間でグループ作成を行い、コミュニケーションを取ることが可能です。
 
 # License
 This software is released under the MIT License, see LICENSE.

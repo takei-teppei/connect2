@@ -18,6 +18,4 @@ Ruby on Rails ~> 5.2.3
 # License
 This software is released under the MIT License, see LICENSE.
 
-# References
-
 
